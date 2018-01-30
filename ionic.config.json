@@ -1,0 +1,8 @@
+{
+  "name": "mySunshine",
+  "app_id": "d1a41850",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
