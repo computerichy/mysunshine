@@ -1,24 +1,63 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      My SunshineMobile&reg;
     </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
+
+
 <ion-content padding>
-  Sunshine mobile ya get me
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ 
+  <h1 text-center underline>Dashboard</h1>
+
+  <ion-card>
+
+    <ion-card-header>
+      Card Header
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Add card content here! -->
+    </ion-card-content>
+
+  </ion-card>
 
 
-  <button ion-button color="light">Payments</button>
-<button ion-button>My Usage/button>
-<button ion-button color="secondary">My Handset</button>
-<button ion-button color="danger">My Profile</button>
-<button ion-button color="dark">Payments</button>
-<button ion-button color="dark">My Usage</button>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-8>
+        <h5>Weekly allowance</h5>
+        <sunny-progress [progress]="40"></sunny-progress>
+      </ion-col>
+      <ion-col col-4>
+        <h5>X days remaining</h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+      <button round ion-button block color="light" (click)="goToLogin()">Payments</button>
+      <button round ion-button block color="light">My Usage</button> 
+      <button round ion-button block color="light">My Handset</button>
+      </ion-col>     
+      <ion-col>
+        <button round ion-button block color="light">My Profile</button>
+        <button round ion-button block color="light">Payments</button>
+        <button round ion-button block color="light">My Usage</button>
+       </ion-col>
+    </ion-row>
+  </ion-grid>  
+   
+
+  <a href="#">Help &amp; Support</a>
+  <a href="#">My Contracts</a>
+
 
 </ion-content>
 

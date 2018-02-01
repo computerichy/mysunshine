@@ -14,3 +14,121 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+/********** GLOBAL SASS VARS **********/
+
+$sunshine-cold: #ffdd00;
+$sunshine-warm: #ffa200;
+
+
+
+
+/************* FONT FAMILIES **************/
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight:normal;  
+  src: url('../assets/fonts/Rubik/Rubik-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../assets/fonts/Rubik/Rubik-Bold.ttf');
+  font-weight:bold;
+}
+
+
+.ion-page > ion-content {
+  background-color:#F9F9FB;
+  position:relative !important;
+}
+
+ion-navbar {
+  height:100%;
+}
+
+p, h1, h2, h3, h4, h5, button {
+  font-family: 'Rubik';
+}
+
+h1, h2, h3, h4, h5 {
+  position:relative;
+
+  &[underline]:after {
+      $underline-width: 40px;
+
+      content: '';
+      border-bottom:2px solid $sunshine-warm; 
+      display:block;
+      width:$underline-width;
+      position:absolute;
+      text-align:center;
+      left:50%;
+      margin-left: -$underline-width / 2;
+    }
+}
+
+a {  
+ color: black;
+}
+
+button {
+  .button-md {
+    text-transform:none;
+  }
+}
+
+ion-header.header {
+  text-align:center;
+  color:white;
+  height:100px;
+
+    
+  .toolbar-title-md {
+    color: white;
+    font-family:'Rubik';
+  }  
+
+   &:after {
+     content: '';
+     background-image: url('../assets/imgs/sunshine_header_wave.png');
+     width: 100%;
+     background-position:0px 0px;
+     height: 19px;
+     position: absolute;
+     bottom: 0px;
+     left: 0px;
+     z-index: 10;
+     background-repeat: repeat-x;
+   }
+}
+
+ion-header.header:after {
+}
+
+
+@mixin sunshine-gradient-cold-warm-left-right {
+  background: rgba(255,221,0,1);
+  background: -moz-linear-gradient(left, rgba(255,221,0,1) 0%, rgba(255,162,0,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,221,0,1)), color-stop(100%, rgba(255,162,0,1)));
+  background: -webkit-linear-gradient(left, rgba(255,221,0,1) 0%, rgba(255,162,0,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,221,0,1) 0%, rgba(255,162,0,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,221,0,1) 0%, rgba(255,162,0,1) 100%);
+  background: linear-gradient(to right, rgba(255,221,0,1) 0%, rgba(255,162,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdd00', endColorstr='#ffa200', GradientType=1 );
+}
+
+
+.toolbar-background {
+  @include sunshine-gradient-cold-warm-left-right;
+}
+
+
+
+
+
+
+
+
