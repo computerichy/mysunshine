@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-
+ 
  
 import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
 import { LoginComponent } from '../components/login/login';
