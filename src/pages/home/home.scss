@@ -1,12 +1,490 @@
-page-home {
+html,body{
+      background-color: #f9fafb;
+    }
+    h1,h2,h3,h4,h5,h6,p,label,input{
+        -webkit-margin-before: 0em;
+	    -webkit-margin-after: 0em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+	    font-family:Rubik;
+    }
+    .page{
+      position: relative;
+      width: 100%;
+      background-color: #f9fafb;
+    }
+    .nav_btn{
+		width: 28px;
+	    height: 45px;
+	    float: right;
+	    text-align: right;
+	    right: 3.5%;
+	    position: relative;
+	    margin-top:5px;
+    }
+    .nav_btn span{
+      width: 28px;
+      position: relative;
+      height: 2px;
+      background-color: #ffffff;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .header_bg{
+      position: relative;
+      width: 100%;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffdd00+0,ffa200+100 */
+      background: #ffdd00; /* Old browsers */
+      background: -moz-linear-gradient(-45deg, #ffdd00 0%, #ffa200 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(-45deg, #ffdd00 0%,#ffa200 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(135deg, #ffdd00 0%,#ffa200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdd00', endColorstr='#ffa200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    .header_bg:after{
+      content: "";
+        background-image: url(../assets/imgs/sunshine_header_wave.png);
+        width: 100%;
+        height: 19px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        z-index: 10;
+        background-repeat: repeat-x;
+    }
+    .article_header{
+      height: 70px;
+    }
+    .article_header h1{
+        font-size: 20px;
+        color: #fff;
+        font-weight: 300;
+        text-align: center;
+        text-shadow: 0px 0px 5px rgba(60, 57, 5, 0.1);
+        line-height: 53px;
+    }
+    .prime_wrapper{
+      margin-top: 25px;
+    }
+    .prime_content_single{
+      position: relative;
+      width: 85%;
+      padding: 3.5%;
+      margin: auto auto 15px auto;
+      border-radius: 4px;
+      box-shadow: 0px 0px 5px rgba(122,122,122,0.15);
+    }
+    .prime_content_single h2{
+      font-size: 15px;
+        padding-bottom: 5px;
+      margin: auto auto 15px auto;
+    }
+    .prime_content_standard{
+        color: #333a4e;
+      background-color: #ffffff;
+      border: 1px solid rgba(200,200,200,0.4);
+        text-shadow:1px 1px 0px rgba(255,255,255,1);        
+    }
+    .prime_content_yellow{
+      background-color: #fff5ca;
+      border: 1px solid #ffc700;
+        color: #e2ae07;
+        text-shadow:1px 1px 0px rgba(255,255,255,0.5);
+    }
+    .prime_content_red{
+      background-color: #ffe9e9 !important;
+      border: 1px solid #ef1d1d;
+        color: #ef1d1d;
+        text-shadow:1px 1px 0px rgba(255,255,255,1);      
+    }
+    .prime_content_green{
+        background-color: #eeffe0 !important;
+        border: 1px solid #66c52e;
+        color: #66c52e;
+        text-shadow: 1px 1px 0px rgba(255,255,255,1);     
+    }
 
+
+
+
+    .single_row{
+        position: relative;    
+        -webkit-padding-start: 0px;
+	    -webkit-margin-before: 0em;
+	    -webkit-margin-after: 0em;
+    }
+    .single_row li{
+      position: relative;
+      display: block;
+      float: left;
+      width: 30%;     
+    }
+
+    .yellow_br{
+        position: relative;
+        display: block;
+        margin: 8px 0px 12px 0px;
+        border-bottom: 1px solid rgba(202, 149, 1, 0.2);
+    }
+    .grey_br{
+        position: relative;
+        display: block;
+        margin: 8px 0px 12px 0px;
+        border-bottom: 1px solid rgba(220, 220, 220, 0.4);
+    }
+    .red_br{
+        position: relative;
+        display: block;
+        margin: 8px 0px 12px 0px;
+        border-bottom: 1px solid rgba(202, 149, 1, 0.2);
+    }
+
+
+
+
+
+
+    .clear{
+      clear: both;
+    }
+
+
+
+
+    .background_overlay{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(17,15,0,0.7);
+      z-index: 100;
+      display: none;
+    }
+    .navigation_wrapper{
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      margin: auto;
+      width:80%;
+      height: fit-content;
+      padding: 5%;
+      background-color: rgba(17,15,0,0.7);
+      z-index: 101;
+      display: none;
+    }
+    .navigation_li_single{
+      line-height: 40px;
+    }
+    .navigation_li_single:after{
+      content: "";
+      position: relative;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.1);
+    }
+    .navigation_li_single:last-child:after{
+      content: "";
+      display: none;
+    }
+    .navigation_li_single a{
+      font-size: 14px;
+      color: #fff;
+      font-weight: 300;
+      text-decoration: none;
+      position: relative;
+      width: 100%;
+      display: block;
+    }
+    .navigation_li_single a img{
+      float: right;
+      top: 17px;
+      position: relative;
+    }
+
+
+
+
+
+
+
+/* Dashboard */
+  .dashboard_header{
+    height: 220px;
+  }
+  .dashboard_wrapper{
+    z-index: 10;
+    position: relative;
+      margin-top: -70px;
+  }
+  .dashboard_content_single{
+    position: relative;
+    width: 93%;
+    padding: 15px;
+    margin: auto auto 18px auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px rgba(122,122,122,0.2);
+  }
+  .dashboard_content_single h2{
+    font-size: 15px;
+      padding-bottom: 5px;
+    margin: auto auto 15px auto;
+  }
+
+
+
+
+
+
+
+
+  .dashboard_navigation_wrapper{
+      width: 93%;
+      margin: auto auto 15px auto;
+  }
+  .dashboard_navigation_single,.dashboard_navigation_single_right{
+      position: relative;
+      float: left;
+      width: 49%;
+      margin: 0px 1% 12px 0%;
+      background-color: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
+      height: 48px;
+  }
+  .dashboard_navigation_single_right{
+      margin: 0px 0% 12px 1%;
+  }
+  .dashboard_navigation_single a,.dashboard_navigation_single_right a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+  .dashboard_navigation_single a p, .dashboard_navigation_single_right a p{
+    font-size: 14px;
+    line-height: 16px;
+    /* color: #333a4e; */
+    color: #7c8090;
+    position: relative;
+    top: -5px;
+    font-weight: 300;
+  }
+  .dashboard_navigation_single a img,.dashboard_navigation_single_right a img{
+    display: inline-block;
+      position: relative;
+      margin: 15px 4px 0px 17px;
+  }
+
+
+
+
+/* My Profile */
+#personal_details_edit{
+  display: none;
+}
+.profile_placeholder{
+  font-size: 13px;
+  color: #6f7787;
+  width:45%;
+  line-height: 34px;
+  font-weight: 300;
+}
+.profile_entry{
+  font-size: 13px;
+  color: #333a4e;
+  width:55%;
+  line-height: 24px;
+}
+#my_profile_display{
+  width: 100%;
+}
+#my_profile_display tr{
+  width: 100%;
+  border-bottom: 1px solid rgba(100,100,100,0.1);
+}
+
+.profile_placeholder_edit{
+  font-size: 13px;
+  color: #6f7787;
+  width:45%;
+  line-height: 24px;
+  display: block;
+  font-weight: 300;
+}
+.profile_placeholder_input{
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  color: #333a4e;
+  font-size: 13px;
+  background-color: #fafafa;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  height: 25px;
+  text-indent: 5px;
+}
+.personal_details_edit_single{
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+.update_btn{
+  position: relative;
+    display: block;
+    width: 91%;
+    height: 45px;
+    margin: 15px auto auto auto;
+    border: 0px;
+    border-radius: 26px;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+    background: #ffdd00;
+    background: -moz-linear-gradient(-45deg, #ffdd00 0%, #ffa200 100%);
+    background: -webkit-linear-gradient(-45deg, #ffdd00 0%,#ffa200 100%);
+    background: linear-gradient(135deg, #ffdd00 0%,#ffa200 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdd00', endColorstr='#ffa200',GradientType=1 );
+}
+.update_btn:focus{
+  outline: none;  
 }
 
 
-ion-header.header {
- height:220px;
+
+
+.graph{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffdd00+0,ffa200+100 */
+  background: #ffdd00; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffdd00 0%, #ffa200 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffdd00 0%,#ffa200 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffdd00 0%,#ffa200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdd00', endColorstr='#ffa200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.button-md {
- margin:20px 0;
+
+
+
+
+
+
+
+
+
+/* Payments */
+.mothly_payments_wrapper{
+  position: relative;
+    width: 92%;
+    margin: auto auto 15px auto;
 }
+.mothly_payments_container{
+  background-color: #ffffff;
+  position: relative;
+    width: 92%;
+    padding: 4%;
+    margin: auto auto 23px auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(122,122,122,0.15);
+}
+.mothly_payments_table{
+  width: 100%;
+  position: relative;
+}
+.mothly_payments_table th{
+    font-size: 14px;
+    color: #333a4e;
+    position: relative;
+    height: 20px;
+    border-bottom: 1px solid #cccccc;
+}
+.mothly_payments_table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.mothly_payments_table td{
+    font-size: 12px;
+    color: #6f7787;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+.latest_payments_single{
+  background-color: #ffffff;
+  position: relative;
+    width: 92%;
+    padding: 4%;
+    margin: auto auto 10px auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(122,122,122,0.15);
+}
+
+
+
+
+.modal{
+  position: fixed;
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff;
+    z-index: 101;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+#total_overdue_modal{
+
+}
+
+.view_more{
+  display: block;
+    position: relative;
+    text-decoration: underline;
+    color: #1aa0c5;
+    font-size: 12px;
+    text-align: left;
+    text-indent: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+/* Footer My Phone */
+#footer_phone_container{
+  width:135px; 
+  margin:auto auto 5px auto; 
+  text-align:center;
+}
+#footer_phone_container img{
+  position:relative; 
+  display:inline; 
+  top:4px; 
+  margin-right:7px;
+}
+#footer_phone_container p{
+  font-size:14px; 
+  display:inline; 
+  color:#b3b3b3; 
+  text-shadow:1px 1px 0px #ffffff; 
+  font-weight:100; 
+  line-height:22px;
+}
+
+
+#navigation_close_btn{
+  position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+
+
+
+

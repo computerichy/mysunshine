@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5 {
 }
 
 a {  
- color: black;
+  color: black;
 }
 
 button {
@@ -85,11 +85,10 @@ ion-header.header {
   color:white;
   height:100px;
 
-    
   .toolbar-title-md {
     color: white;
     font-family:'Rubik';
-  }  
+  }
 
    &:after {
      content: '';
@@ -124,9 +123,18 @@ ion-header.header:after {
 .toolbar-background {
   @include sunshine-gradient-cold-warm-left-right;
 }
+ion-app.md{
+  background-color:#f9fafb;
+}
 
-
-
+.dashboard_header_name h1{
+  font-size: 24px; 
+  color: #fff; 
+  font-weight: 300; 
+  text-align: center; 
+  text-shadow: 0px 0px 5px rgba(60, 57, 5, 0.1); 
+  margin-top:55px;
+}
 
 
 
