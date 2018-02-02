@@ -8,9 +8,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 
 
-import { MyApp } from './app.component';
+import { MyApp } from './app.component'; 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
  
  
 import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
@@ -23,6 +24,7 @@ import { AuthService } from '../services/auth/auth';
     MyApp,
     HomePage,
     LoginPage,
+    ProfilePage,
     SunnyProgressComponent,
     LoginComponent
   ],
@@ -35,7 +37,8 @@ import { AuthService } from '../services/auth/auth';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

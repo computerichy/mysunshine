@@ -13,7 +13,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+ 
   public goToProfile() {
     this.navCtrl.push(ProfilePage);
   }
