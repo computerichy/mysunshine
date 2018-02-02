@@ -4,11 +4,17 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
 
   <ion-navbar>
+    <div class="nav_btn nav_btn_article">
+    	<ion-icon name="menu" style="font-size:33px; color:#fff;"></ion-icon>
+    </div>
     <ion-title>profile</ion-title>
   </ion-navbar>
+
+
 
 </ion-header>
 
@@ -16,3 +22,96 @@
 <ion-content padding>
 
 </ion-content>
+
+
+
+
+    <div class="dashboard_wrapper">     
+      <div class="dashboard_content_single prime_content_single prime_content_standard animated slideInUp">
+        <ul class="single_row">
+          <li style="width:55%; font-size:16px; line-height:16px;"><p>Weekly Allowance:</p></li>
+          <li style="width:45%; font-size:14px; line-height:16px; text-align:right; color:#efb70e;"><p>6 days remaining</p></li>
+          <div class="clear"></div>
+        </ul>
+        <div class="grey_br"></div>
+        <ul class="single_row">
+          <sunny-progress [progress]="90"></sunny-progress>          
+          <div style="position:relative; margin-top:7px;">
+            <div style="position:relative; float:left; margin-right:20px;">
+              <div style="border-radius:2px; width:30px; height:15px; background-color:#ffc700; margin-right:3px; float:left;"></div>
+              <p style="line-height:18px; float:left; font-size:12px; color:#333a4e;">Used</p>
+            </div>
+            <div style="position:relative; float:left; margin-right:20px;">
+              <div style="border-radius:2px; width:30px; height:15px; background-color:#e6e6e6; margin-right:3px; float:left;"></div>
+              <p style="line-height:18px; float:left; font-size:12px; color:#333a4e;">Available</p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="dashboard_content_single prime_content_single prime_content_standard animated slideInUp">
+        <ul class="single_row">
+          <li style="width:65%; font-size:14px; line-height:16px;"><p>Next Payment Date:</p></li>
+          <li style="width:35%; font-size:14px; line-height:16px; text-align:right; color:#efb70e;"><p>12/12/2018</p></li>
+          <div class="clear"></div>
+        </ul>
+        <div class="grey_br"></div>
+        <ul class="single_row">
+          <li style="width:65%; font-size:14px; line-height:16px;"><p>Next Payment Amount:</p></li>
+          <li style="width:35%; font-size:14px; line-height:16px; text-align:right; color:#efb70e;"><p>&pound;15.93</p></li>
+          <div class="clear"></div>
+        </ul>
+      </div>  
+      
+
+
+
+
+
+
+
+
+<!-- Navigation -->
+      <div class="dashboard_navigation_wrapper">
+        <div class="dashboard_navigation_single animated slideInUp">
+          <a href="#" id="dash_payment_btn" (click)="goToLogin()">
+            <img src="../assets/imgs/credit_icon.png" alt="" title="" style="display:inline-block;" />
+            <p style="display:inline-block;">Payments</p>
+          </a>
+        </div>
+        <div class="dashboard_navigation_single_right animated slideInUp">
+          <a href="#" id="dash_usage_btn" (click)="goToLogin()">
+            <img src="../assets/imgs/usage_icon.png" alt="" title="" style="display:inline-block; margin: 11px 6px 0px 16px;" />
+            <p style="display:inline-block; top:-7px;">Usage</p>
+          </a>
+        </div>
+        <div class="dashboard_navigation_single animated slideInUp">
+          <a href="#" id="dash_handset_btn" (click)="goToLogin()">
+            <img src="../assets/imgs/handset_icon.png" alt="" title="" style="display:inline-block; margin: 10px 10px 0px 21px;" />
+            <p style="display:inline-block; top:-11px;">Handset</p>
+          </a>
+        </div>
+        <div class="dashboard_navigation_single_right animated slideInUp">
+          <a id="dash_profile_btn" (click)="goToProfile()">
+            <img src="../assets/imgs/profile_icon.png" alt="" title="" style="display:inline-block; margin: 12px 8px 0px 19px;" />
+            <p style="display:inline-block; top:-7px;">My Profile</p>
+          </a>
+        </div>
+        <div class="dashboard_navigation_single animated slideInUp">
+          <a href="#" id="dash_orders_btn" (click)="goToLogin()">
+            <img src="../assets/imgs/sim_icon.png" alt="" title="" style="display:inline-block; margin: 11px 10px 0px 19px;" />
+            <p style="display:inline-block; top:-9px;">My Order</p>
+          </a>
+        </div>
+        <div class="dashboard_navigation_single_right animated slideInUp">
+          <a href="#" id="dash_delivery_btn" (click)="goToLogin()">
+            <img src="../assets/imgs/delivery_icon.png" alt="" title="" style="display:inline-block; margin: 16px 4px 0px 16px;" />
+            <p style="display:inline-block;">Delivery</p>
+          </a>
+        </div>
+        <div class="clear"></div>
+      </div>
+<!-- end of navigation -->
+
+
+
