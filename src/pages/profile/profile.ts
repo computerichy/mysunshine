@@ -20,6 +20,14 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+
+   
+    this.http.post('http://sunshinemobile.co.uk:8097/api/profile', function(req, res) {
+
+
+    });     
+   
+  
   }
 
 }

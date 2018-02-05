@@ -8,6 +8,7 @@ import {Observable} from 'rxjs/Observable';
 
 import { Dialogs } from '@ionic-native/dialogs';
 
+import * as CONSTANTS from '../../app/app.constants';
 
 @Injectable()
 export class AuthService {
