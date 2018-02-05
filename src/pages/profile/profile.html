@@ -4,175 +4,120 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
-
 <style type="text/css">
 	ion-header.header{
-		margin-bottom: 20px;
     	position: relative;
 	}
-	.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
-		color: #fff;
-	}
-	.ion-page.show-page{
-		background-color: #f9fafb;
-	}
-
-
 </style>
-<ion-header>
-  <ion-navbar>
-    <div class="nav_btn nav_btn_article">
-    	<ion-icon name="menu" style="font-size:33px; color:#fff;"></ion-icon>
-    </div>
-    <ion-title>profile</ion-title>
-  </ion-navbar>
-</ion-header>
-
-
-
-
-<div class="prime_wrapper">
-			<div class="prime_content_single prime_content_standard">
-				<div id="personal_details_overview">
-					<ul class="single_row">
-						<li style="width:90%; font-size:16px; line-height:16px;">Personal Details:</li>
-						<li style="width:10%; text-align:right;" id="personal_details_edit_icon"><img src="img/edit_icon.png" alt="" title="" /></li>
-						<div class="clear"></div>
-					</ul>
-					<div class="grey_br"></div>
-					<div>
-						<table id="my_profile_display">
-							<tr>
-								<td class="profile_placeholder">Title:</td>
-								<td class="profile_entry">Mr</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">First name:</td>
-								<td class="profile_entry">Karl</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Surname:</td>
-								<td class="profile_entry">Scott</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Address 1:</td>
-								<td class="profile_entry">12 Great Park Road</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Address 2:</td>
-								<td class="profile_entry">Kimberworth</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Town/ City:</td>
-								<td class="profile_entry">Rotheram</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Postcode:</td>
-								<td class="profile_entry">S61 3QF</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Phone number:</td>
-								<td class="profile_entry">Karl</td>
-							</tr>
-							<tr>
-								<td class="profile_placeholder">Email address:</td>
-								<td class="profile_entry">Karl@hotmail.com</td>
-							</tr>
-						</table>
-					</div>
+<ion-scroll scrollY="true" style="width: 100%; height: 100%; background-color: #f9fafb;">
+	<ion-header>
+	  <ion-navbar>
+	    <div class="nav_btn nav_btn_article">
+	    	<ion-icon name="menu" class="nav_article_menu"></ion-icon>
+	    </div>
+	    <ion-title>My Profile</ion-title>
+	  </ion-navbar>
+	</ion-header>
+	<div class="prime_wrapper">
+		<div class="prime_content_single prime_content_standard">
+			<div id="personal_details_overview">
+				<ul class="single_row">
+					<li style="width:90%; font-size:16px; line-height:16px;">Personal Details:</li>
+					<li style="width:10%; text-align:right;" id="personal_details_edit_icon"> <ion-icon ios="ios-create" md="md-create"></ion-icon></li>
+					<div class="clear"></div>
+				</ul>
+				<div class="grey_br"></div>
+				<div>
+					<table id="my_profile_display">
+						<tr>
+							<td class="profile_placeholder">Title:</td>
+							<td class="profile_entry">Mr</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">First name:</td>
+							<td class="profile_entry">Karl</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">Surname:</td>
+							<td class="profile_entry">Scott</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">Address 1:</td>
+							<td class="profile_entry">12 Great Park Road</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">Address 2:</td>
+							<td class="profile_entry">Kimberworth</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">Town/ City:</td>
+							<td class="profile_entry">Rotheram</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">Postcode:</td>
+							<td class="profile_entry">S61 3QF</td>
+						</tr>
+						<tr>
+							<td class="profile_placeholder">Phone number:</td>
+							<td class="profile_entry">Karl</td>
+						</tr>
+						<tr style="border-bottom:0px;">
+							<td class="profile_placeholder">Email address:</td>
+							<td class="profile_entry">Karl@hotmail.com</td>
+						</tr>
+					</table>
 				</div>
-				<div id="personal_details_edit">
-					<ul class="single_row">
-						<li style="width:100%; font-size:16px; line-height:16px;">Personal Details:</li>
-						<div class="clear"></div>
-					</ul>
-					<div class="grey_br"></div>
-					<div>
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Title</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="Mr" />
-						</div>
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">First name</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="Karl" />
-						</div>	
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Surname</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="Scott" />
-						</div>	
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Address 1</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="39 Great Park Road" />
-						</div>	
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Address 2</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="Kimberworth" />
-						</div>						
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Town/ City</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="Kimberworth" />
-						</div>						
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Postcode</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="S61 3QF" />
-						</div>						
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Phone number</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="07557685022" />
-						</div>							
-						<div class="personal_details_edit_single">
-							<label class="profile_placeholder_edit">Email Address</label>
-							<input class="profile_placeholder_input" type="text" name="" id="" value="karl@hotmail.com" />
-						</div>		
-						<button class="update_btn">Update Settings</button>				
+			</div>
+			<div id="personal_details_edit">
+				<ul class="single_row">
+					<li style="width:100%; font-size:16px; line-height:16px;">Personal Details:</li>
+					<div class="clear"></div>
+				</ul>
+				<div class="grey_br"></div>
+				<div>
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Title</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="Mr" />
 					</div>
-				</div>	
-
-				<div class="clear"></div>
-			</div>			
-		</div>
-<!-- Navigation -->
-      <div class="dashboard_navigation_wrapper">
-        <div class="dashboard_navigation_single animated slideInUp">
-          <a href="#" id="dash_payment_btn" (click)="goToLogin()">
-            <img src="assets/imgs/credit_icon.png" alt="" title="" style="display:inline-block;" />
-            <p style="display:inline-block;">Payments</p>
-          </a>
-        </div>
-        <div class="dashboard_navigation_single_right animated slideInUp">
-          <a href="#" id="dash_usage_btn" (click)="goToLogin()">
-            <img src="assets/imgs/usage_icon.png" alt="" title="" style="display:inline-block; margin: 11px 6px 0px 16px;" />
-            <p style="display:inline-block; top:-7px;">Usage</p>
-          </a>
-        </div>
-        <div class="dashboard_navigation_single animated slideInUp">
-          <a href="#" id="dash_handset_btn" (click)="goToLogin()">
-            <img src="assets/imgs/handset_icon.png" alt="" title="" style="display:inline-block; margin: 10px 10px 0px 21px;" />
-            <p style="display:inline-block; top:-11px;">Handset</p>
-          </a>
-        </div>
-        <div class="dashboard_navigation_single_right animated slideInUp">
-          <a id="dash_profile_btn" (click)="goToProfile()">
-            <img src="assets/imgs/profile_icon.png" alt="" title="" style="display:inline-block; margin: 12px 8px 0px 19px;" />
-            <p style="display:inline-block; top:-7px;">My Profile</p>
-          </a>
-        </div>
-        <div class="dashboard_navigation_single animated slideInUp">
-          <a href="#" id="dash_orders_btn" (click)="goToLogin()">
-            <img src="assets/imgs/sim_icon.png" alt="" title="" style="display:inline-block; margin: 11px 10px 0px 19px;" />
-            <p style="display:inline-block; top:-9px;">My Order</p>
-          </a>
-        </div>
-        <div class="dashboard_navigation_single_right animated slideInUp">
-          <a href="#" id="dash_delivery_btn" (click)="goToLogin()">
-            <img src="assets/imgs/delivery_icon.png" alt="" title="" style="display:inline-block; margin: 16px 4px 0px 16px;" />
-            <p style="display:inline-block;">Delivery</p>
-          </a>
-        </div>
-        <div class="clear"></div>
-      </div>
-<!-- end of navigation -->
-
-
-
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">First name</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="Karl" />
+					</div>	
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Surname</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="Scott" />
+					</div>	
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Address 1</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="39 Great Park Road" />
+					</div>	
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Address 2</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="Kimberworth" />
+					</div>						
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Town/ City</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="Kimberworth" />
+					</div>						
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Postcode</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="S61 3QF" />
+					</div>						
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Phone number</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="07557685022" />
+					</div>
+					<div class="personal_details_edit_single">
+						<label class="profile_placeholder_edit">Email Address</label>
+						<input class="profile_placeholder_input" type="text" name="" id="" value="karl@hotmail.com" />
+					</div>
+					<button class="update_btn">Update Settings</button>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>	
+	    <div id="footer_phone_container">
+	      <img src="assets/imgs/my_phone_icon.png" alt="" title="" /><p>07557685022</p>
+	    </div>		
+	</div>
+</ion-scroll>
