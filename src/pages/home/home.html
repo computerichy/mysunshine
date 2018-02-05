@@ -5,7 +5,7 @@
   <!-- sticky navigation-->
     <div class="header_bg dashboard_header">      
       <div class="nav_btn">
-        <ion-icon name="menu" style="font-size:33px; color:#fff;"></ion-icon>
+        <ion-icon name="menu" class="nav_article_menu"></ion-icon>
       </div>
   <!-- sticky navigation-->      
       <div class="clear"></div>
@@ -66,38 +66,38 @@
 <!-- Navigation -->
       <div class="dashboard_navigation_wrapper">
         <div class="dashboard_navigation_single animated slideInUp">
-          <a href="#" id="dash_payment_btn" (click)="goToLogin()">
+          <a href="#" id="dash_payment_btn" (click)="goToPayments()">
             <img src="assets/imgs/credit_icon.png" alt="" title="" style="display:inline-block;" />
             <p style="display:inline-block;">Payments</p>
           </a>
         </div>
         <div class="dashboard_navigation_single_right animated slideInUp">
-          <a href="#" id="dash_usage_btn" (click)="goToLogin()">
+          <a href="#" id="dash_usage_btn" (click)="goToUsage()">
             <img src="assets/imgs/usage_icon.png" alt="" title="" style="display:inline-block; margin: 11px 6px 0px 16px;" />
             <p style="display:inline-block; top:-7px;">Usage</p>
           </a>
         </div>
         <div class="dashboard_navigation_single animated slideInUp">
-          <a href="#" id="dash_handset_btn" (click)="goToLogin()">
+          <a href="#" id="dash_handset_btn" (click)="goToHandset()">
             <img src="assets/imgs/handset_icon.png" alt="" title="" style="display:inline-block; margin: 10px 10px 0px 21px;" />
             <p style="display:inline-block; top:-11px;">Handset</p>
           </a>
         </div>
         <div class="dashboard_navigation_single_right animated slideInUp">
           <a id="dash_profile_btn" (click)="goToProfile()">
-            <img src=".assets/imgs/profile_icon.png" alt="" title="" style="display:inline-block; margin: 12px 8px 0px 19px;" />
+            <img src="assets/imgs/profile_icon.png" alt="" title="" style="display:inline-block; margin: 12px 8px 0px 19px;" />
             <p style="display:inline-block; top:-7px;">My Profile</p>
           </a>
         </div>
         <div class="dashboard_navigation_single animated slideInUp">
-          <a href="#" id="dash_orders_btn" (click)="goToLogin()">
+          <a href="#" id="dash_orders_btn" (click)="goToOrder()">
             <img src="assets/imgs/sim_icon.png" alt="" title="" style="display:inline-block; margin: 11px 10px 0px 19px;" />
             <p style="display:inline-block; top:-9px;">My Order</p>
           </a>
         </div>
         <div class="dashboard_navigation_single_right animated slideInUp">
-          <a href="#" id="dash_delivery_btn" (click)="goToLogin()">
-            <img src=".assets/imgs/delivery_icon.png" alt="" title="" style="display:inline-block; margin: 16px 4px 0px 16px;" />
+          <a href="#" id="dash_delivery_btn" (click)="goToDelivery()">
+            <img src="assets/imgs/delivery_icon.png" alt="" title="" style="display:inline-block; margin: 16px 4px 0px 16px;" />
             <p style="display:inline-block;">Delivery</p>
           </a>
         </div>

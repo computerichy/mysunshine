@@ -1,18 +1,118 @@
 <!--
-  Generated template for the PaymentsPage page.
+  Generated template for the UsagePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<style type="text/css">
+	ion-header.header{
+    	position: relative;
+	}
+</style>
+<ion-scroll scrollY="true" style="width: 100%; height: 100%; background-color: #f9fafb;">
+	<ion-header>
+	  <ion-navbar>
+	    <div class="nav_btn nav_btn_article">
+	    	<ion-icon name="menu" class="nav_article_menu"></ion-icon>
+	    </div>
+	    <ion-title>Payments</ion-title>
+	  </ion-navbar>
+	</ion-header>
+		<div class="prime_wrapper">
+			<div class="prime_content_single prime_content_yellow">
+				<ul class="single_row">
+					<li style="width:65%; font-size:15px; line-height:16px;">Next Payment Date:</li>
+					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">12/03/2018</li>
+					<div class="clear"></div>
+				</ul>
+				<div class="yellow_br"></div>
+				<ul class="single_row">
+					<li style="width:65%; font-size:15px; line-height:16px;">Next Payment Amount</li>
+					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">&pound;13.56</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
 
-  <ion-navbar>
-    <ion-title>payments</ion-title>
-  </ion-navbar>
+			<div class="prime_content_single prime_content_red" id="total_overdue_btn">
+				<ul class="single_row">
+					<li style="width:70%; font-size:15px; line-height:16px;">Total Overdue:</li>
+					<li style="width:23%; font-size:15px; line-height:16px; text-align:center;">&pound;32.75</li>
+					<li style="width:7%; text-align:center;"><img style="position:relative;top:2px;" src="assets/imgs/red_arrow_right.png" alt="" title="" /></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
 
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+			<div class="mothly_payments_wrapper" style="margin-top:30px;">
+				<h3>This Months Payments</h3>
+				<div class="grey_br"></div>				
+				<div class="mothly_payments_container">
+					<table class="mothly_payments_table">
+						<thead>
+							<th style="width:5px;"></th>
+							<th style="text-align:left;">Due Date</th>
+							<th>Amount</th>
+							<th>Status</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td>01/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Paid</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>12/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Overdue</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>19/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Pending</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>27/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Pending</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="mothly_payments_wrapper" style="margin-top:30px;">
+				<h3>Latest Payments</h3>
+				<div class="grey_br"></div>				
+				<div class="latest_payments_single prime_content_red">
+					<ul class="single_row">
+						<li style="width:70%; font-size:14px; line-height:16px;">March:</li>
+						<li style="width:23%; font-size:13px; line-height:16px; text-align:center;">Overdue</li>
+						<li style="width:7%; text-align:center;"><img style="position:relative;top:2px;" src="assets/imgs/red_arrow_right.png" alt="" title="" /></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="latest_payments_single" >
+					<ul class="single_row">
+						<li style="width:70%; font-size:14px; line-height:16px;">February:</li>
+						<li style="width:23%; font-size:13px; line-height:16px; text-align:center;">Paid</li>
+						<li style="width:7%; text-align:center;"><img style="position:relative;top:2px;" src="assets/imgs/black_arrow_right.png" alt="" title="" /></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="latest_payments_single">
+					<ul class="single_row">
+						<li style="width:70%; font-size:14px; line-height:16px;">January:</li>
+						<li style="width:23%; font-size:13px; line-height:16px; text-align:center;">Paid</li>
+						<li style="width:7%; text-align:center;"><img style="position:relative;top:2px;" src="assets/imgs/black_arrow_right.png" alt="" title="" /></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<a href="#" class="view_more" id="latest_payments_more_btn">View more</a>
+			</div>
+		<div id="footer_phone_container">
+      		<img src="assets/imgs/my_phone_icon.png" alt="" title="" /><p>07557685022</p>
+		</div>
+	</div>
+</ion-scroll>

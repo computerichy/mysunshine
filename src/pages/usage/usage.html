@@ -4,15 +4,73 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<style type="text/css">
+	ion-header.header{
+    	position: relative;
+	}
+</style>
+<ion-scroll scrollY="true" style="width: 100%; height: 100%; background-color: #f9fafb;">
+	<ion-header>
+	  <ion-navbar>
+	    <div class="nav_btn nav_btn_article">
+	    	<ion-icon name="menu" class="nav_article_menu"></ion-icon>
+	    </div>
+	    <ion-title>Usage</ion-title>
+	  </ion-navbar>
+	</ion-header>
 
-  <ion-navbar>
-    <ion-title>usage</ion-title>
-  </ion-navbar>
 
-</ion-header>
+		<div class="prime_wrapper">
+			<div class="prime_content_single prime_content_yellow">
+				<ul class="single_row">
+					<li style="width:65%; font-size:15px; line-height:16px;">Credit Remaining:</li>
+					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">&pound;13.56</li>
+					<div class="clear"></div>
+				</ul>
+				<div class="yellow_br"></div>
+				<ul class="single_row">
+					<li style="width:65%; font-size:15px; line-height:16px;">Allowance Renews in</li>
+					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">4 days</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+
+			<div class="prime_content_single prime_content_standard">
+				<ul class="single_row">
+		          <li style="width:100%; font-size:16px; line-height:16px;"><p>Weekly Allowance:</p></li>
+					<div class="clear"></div>
+				</ul>
+				<div class="grey_br"></div>
+
+				 <ul class="single_row">
+          <sunny-progress [progress]="90"></sunny-progress>          
+          <div style="position:relative; margin-top:7px;">
+            <div style="position:relative; float:left; margin-right:20px;">
+              <div style="border-radius:2px; width:30px; height:15px; background-color:#ffc700; margin-right:3px; float:left;"></div>
+              <p style="line-height:18px; float:left; font-size:12px; color:#333a4e;">Used</p>
+            </div>
+            <div style="position:relative; float:left; margin-right:20px;">
+              <div style="border-radius:2px; width:30px; height:15px; background-color:#e6e6e6; margin-right:3px; float:left;"></div>
+              <p style="line-height:18px; float:left; font-size:12px; color:#333a4e;">Available</p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </ul>
 
 
-<ion-content padding>
 
-</ion-content>
+			</div>
+
+			<div class="prime_content_single prime_content_standard">
+				<ul class="single_row">
+					<li style="width:100%; font-size:16px; line-height:16px;">Weekly Usage Breakdown:</li>
+					<div class="clear"></div>
+				</ul>
+				<div class="grey_br"></div>
+				<p>Pie Chart needs adding</p>
+			</div>			
+			<div id="footer_phone_container">
+      			<img src="assets/imgs/my_phone_icon.png" alt="" title="" /><p>07557685022</p>
+			</div>
+	</div>	
+</ion-scroll>
