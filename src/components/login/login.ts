@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AuthService } from '../../services/auth/auth';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
+import { LoadingController } from 'ionic-angular';
 
 import { HomePage } from '../../pages/home/home';
 
@@ -22,7 +23,8 @@ export class LoginComponent {
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
-              public navCtrl: NavController) {
+              public navCtrl: NavController,
+              public loadingCtrl: LoadingController) {
 
     this.form = this.formBuilder.group({
       username: [''],
@@ -32,10 +34,18 @@ export class LoginComponent {
    }
 
    attemptLogin() {
+
+     let loader = this.loadingCtrl.create({
+       content: 'Signing in, please wait...',
+     });
+
+     loader.present();
+
      const val = this.form.value;
      this.authService.login(val.email, val.password)
        .subscribe(
          () => {
+           loader.dismiss();
            this.navCtrl.push(HomePage);
          }
        )
