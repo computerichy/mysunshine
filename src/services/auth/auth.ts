@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
- 
+import * as jwtdecode from 'jwt-decode';
 import { catchError, map, tap } from 'rxjs/operators';
 import { of }         from 'rxjs/observable/of';
 import {Observable} from 'rxjs/Observable';
-
+ 
 import { Dialogs } from '@ionic-native/dialogs';
 
 import * as CONSTANTS from '../../app/app.constants';
@@ -31,15 +31,11 @@ export class AuthService {
 
     private setSession(authResult) {
     
-      const token = authResult.authToken;
-
-       
-      
-     
-      const expiresAt = moment().add(authResult.expiresIn, 'second');
+      const token = authResult.authToken,
+        tokenDecoded = jwtdecode(token);
 
       localStorage.setItem('authToken', authResult.authToken);
-      localStorage.setItem('authExpiresAt', `${expiresAt.valueOf()}`);
+      localStorage.setItem('authExpiresAt', `${tokenDecoded.exp}`);
 
     }
 
@@ -51,9 +47,7 @@ export class AuthService {
     }
 
     public isLoggedIn() {
-
       return moment().isBefore(this.getExpiration());
-
     }
 
     public getAuthToken() {
@@ -61,9 +55,9 @@ export class AuthService {
     }
 
     getExpiration() {
-      const expiration = localStorage.getItem('authExpiresAt');
-      const expiresAt = JSON.parse(expiration);
-      return moment(expiresAt);
+      const expiration = parseInt(localStorage.getItem('authExpiresAt'));
+ 
+      return moment.unix(expiration);
     }
  
     

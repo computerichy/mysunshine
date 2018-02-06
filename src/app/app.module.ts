@@ -4,6 +4,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+//import { NavController } from 'ionic-angular';
+ 
 
 import { AuthService } from '../services/auth/auth';    
 
@@ -11,6 +13,7 @@ import { AuthService } from '../services/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../interceptors/authtoken.interceptor';
+import { UnauthorisedInterceptor } from '../interceptors/unauthorised.interceptor';
 
 import { Dialogs } from '@ionic-native/dialogs'; 
 
@@ -62,7 +65,7 @@ import { LoginComponent } from '../components/login/login';
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: ''
-    }, {})
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -85,9 +88,11 @@ import { LoginComponent } from '../components/login/login';
     StatusBar,
     SplashScreen,
     AuthService,
+    //NavController,
     Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 
-    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true}
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass: UnauthorisedInterceptor, multi:true}
   ]
 })
 export class AppModule {}
