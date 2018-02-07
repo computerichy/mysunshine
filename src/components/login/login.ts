@@ -13,6 +13,7 @@ import { HomePage } from '../../pages/home/home';
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
+
 @Component({
   selector: 'login',
   templateUrl: 'login.html'
@@ -41,13 +42,30 @@ export class LoginComponent {
 
      loader.present();
 
-     const val = this.form.value;
-     this.authService.login(val.email, val.password)
+     this.authService.login(this.form.value.username, this.form.value.password)
        .subscribe(
-         () => {
-           loader.dismiss();
-           this.navCtrl.push(HomePage);
+         data => {
+             loader.dismiss();               
+             console.log("LOGIN SUCCESS - SET ROOT TO HOME");
+             this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: "forward"});
+         },
+         err => {
+          loader.dismiss();
+          if (err.error) {
+             switch (err.error) {
+               case 'NOT_FOUND': {
+                 break;
+               }
+               case 'PASSWORD_INCORRECT': {
+                 break;
+               }
+             }
+
+            }
+            
+
          }
+        
        )
 
    }

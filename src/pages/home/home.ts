@@ -9,14 +9,16 @@ import { OrderPage } from '../order/order';
 import { HandsetPage } from '../handset/handset';
 import { PaymentsPage } from '../payments/payments';
 
+import { AuthService } from '../../services/auth/auth';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public authService: AuthService) {
+    console.log(authService.profile);
   }
 
   public goToProfile() {
@@ -26,6 +28,7 @@ export class HomePage {
   public goToDelivery() {
     this.navCtrl.push(DeliveryPage);
   }
+
   public goToUsage() {
     this.navCtrl.push(UsagePage);
   }

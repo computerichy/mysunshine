@@ -1,11 +1,10 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 //import { NavController } from 'ionic-angular';
- 
+import { HeaderColor } from '@ionic-native/header-color'; 
 
 import { AuthService } from '../services/auth/auth';    
 
@@ -39,6 +38,7 @@ import { ContractsPage } from '../pages/contracts/contracts';
 
 import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
 import { LoginComponent } from '../components/login/login';
+import { SunshineApiProvider } from '../providers/sunshine-api/sunshine-api';
 
 
 @NgModule({
@@ -87,12 +87,14 @@ import { LoginComponent } from '../components/login/login';
   providers: [
     StatusBar,
     SplashScreen,
+    HeaderColor,
     AuthService,
     //NavController,
     Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass: UnauthorisedInterceptor, multi:true}
+    {provide: HTTP_INTERCEPTORS, useClass: UnauthorisedInterceptor, multi:true},
+    SunshineApiProvider
   ]
 })
 export class AppModule {}

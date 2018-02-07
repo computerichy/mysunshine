@@ -1,6 +1,9 @@
 import { Injectable, Injector} from '@angular/core';
 
+
+  
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import { Events } from 'ionic-angular';
  
@@ -28,6 +31,7 @@ export class UnauthorisedInterceptor implements HttpInterceptor {
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
+         console.log(event);
           this.events.publish('user:logout');
           console.log('unauth!');
    
