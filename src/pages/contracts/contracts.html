@@ -1,18 +1,69 @@
-<!--
-  Generated template for the ContractsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Contracts</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<style type="text/css">
+	ion-header.header{
+    	position: relative;
+	}
+	.contracts_icon{
+	    font-size: 23px;
+	    width: 8%;
+	    margin-right: 4%;
+	    text-align: center;
+	    position: relative;
+	    top: 3px;
+	    color: #c2c4ca;
+	}
+	.contracts_li{
+		width:100%; 
+		font-size:16px; 
+		line-height:28px;
+	}
+	.contracts_li p{
+		width:75%;
+		display: inline-block;
+	}
+	.contracts_icon_download{
+		position: relative;
+	    top: 3px;
+	    font-size: 24px;
+	}
+	.prime_content_single{
+		padding: 10px 15px !important;
+    	margin: auto auto 10px auto !important;
+	}
+</style>
+<ion-scroll scrollY="true" style="width: 100%; height: 100%; background-color: #f9fafb;">
+	<ion-header>
+	  <ion-navbar>
+	    <div class="nav_btn nav_btn_article">
+	    	<ion-icon name="menu" class="nav_article_menu"></ion-icon>
+	    </div>
+	    <ion-title>Contracts</ion-title>
+	  </ion-navbar>
+	</ion-header>
+		
+	<div class="prime_wrapper">
+		<div class="prime_content_single prime_content_standard" style="margin-bottom:5px;">
+			<ul class="single_row">
+				<li class="contracts_li">
+					<ion-icon class="contracts_icon" ios="ios-phone-portrait" md="md-phone-portrait"></ion-icon>
+					<p>Phone contract:</p> 
+					<ion-icon ios="ios-cloud-download" md="md-cloud-download" class="contracts_icon_download" class="contracts_icon_download"></ion-icon>
+				</li>
+				<div class="clear"></div>
+			</ul>		
+			<div class="clear"></div>
+		</div>	
+		<div class="prime_content_single prime_content_standard" style="margin-bottom:5px;">
+			<ul class="single_row">
+				<li class="contracts_li"><ion-icon class="contracts_icon" ios="ios-paper" md="md-paper"></ion-icon>
+					<p>Tariff:</p> 					 
+					<ion-icon ios="ios-cloud-download" md="md-cloud-download" class="contracts_icon_download"></ion-icon>
+				</li>
+				<div class="clear"></div>
+			</ul>		
+			<div class="clear"></div>
+		</div>			
+	    <div id="footer_phone_container">
+	      <img src="assets/imgs/my_phone_icon.png" alt="" title="" /><p>07557685022</p>
+	    </div>		
+	</div>
+</ion-scroll>

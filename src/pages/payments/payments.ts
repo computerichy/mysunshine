@@ -8,6 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+
+import { LatestPaymentsPage } from '../latest-payments/latest-payments';
+import { TotalOverduePage } from '../total-overdue/total-overdue';
+
 @IonicPage()
 @Component({
   selector: 'page-payments',
@@ -18,8 +22,23 @@ export class PaymentsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+
+  public goToLatestPayments() {
+    this.navCtrl.push(LatestPaymentsPage);
+  }
+
+  public goToTotalOverdue() {
+    this.navCtrl.push(TotalOverduePage);
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PaymentsPage');
+    console.log('ionViewDidLoad LatestPaymentsPage');
   }
 
 }
+
+
+
+
+
+
