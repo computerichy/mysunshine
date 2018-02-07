@@ -4,11 +4,18 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-    
+//import { NavController } from 'ionic-angular';
+ 
+
+import { AuthService } from '../services/auth/auth';    
+
  
 import { HttpClientModule } from '@angular/common/http';
-import { Dialogs } from '@ionic-native/dialogs'; 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '../interceptors/authtoken.interceptor';
+import { UnauthorisedInterceptor } from '../interceptors/unauthorised.interceptor';
 
+import { Dialogs } from '@ionic-native/dialogs'; 
 
 //Pages ======================
 
@@ -32,7 +39,6 @@ import { ContractsPage } from '../pages/contracts/contracts';
 
 import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
 import { LoginComponent } from '../components/login/login';
-import { AuthService } from '../services/auth/auth';
 
 
 @NgModule({
@@ -57,7 +63,9 @@ import { AuthService } from '../services/auth/auth';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: ''
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -79,9 +87,12 @@ import { AuthService } from '../services/auth/auth';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
+    //NavController,
     Dialogs,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, 
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass: UnauthorisedInterceptor, multi:true}
   ]
 })
 export class AppModule {}
