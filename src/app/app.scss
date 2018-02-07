@@ -25,8 +25,6 @@ $sunshine-warm: #ffa200;
 
 
 /************* FONT FAMILIES **************/
-
-
 @font-face {
   font-family: 'Rubik';
   font-weight:normal;  
@@ -49,7 +47,7 @@ ion-navbar {
   height:100%;
 }
 
-p, h1, h2, h3, h4, h5, button {
+p, h1, h2, h3, h4, h5, button,tr,td,th,input,label,li {
   font-family: 'Rubik';
 }
 
@@ -70,7 +68,7 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-a {  
+a {
   color: black;
 }
 
@@ -83,7 +81,7 @@ button {
 ion-header.header {
   text-align:center;
   color:white;
-  height:70px;
+  height:71px;
 
   .toolbar-title-md {
     color: white;
@@ -97,7 +95,7 @@ ion-header.header {
      background-position:0px 0px;
      height: 19px;
      position: absolute;
-     bottom: 0px;
+     bottom: -2px;
      left: 0px;
      z-index: 10;
      background-repeat: repeat-x;
@@ -150,6 +148,7 @@ ion-app.md{
 }
 .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{
   color:#ffffff;
+  left:6px !important;
 }
 .prime_content_single{
   width: 93% !important;
@@ -178,6 +177,7 @@ ion-app.md{
 }
 .toolbar-ios ion-title{
   padding: 0 77px 17px;
+  left:-3px;
 }
   ion-header.header{
       position: relative;
@@ -208,6 +208,132 @@ ion-app.md{
   }
   .latest_payments_single{
     width:100%;
+    color:#333a4e;
   }
-
+  .mothly_payments_wrapper h3{
+    font-size: 16px;
+  }
+  .mothly_payments_table th{
+    font-weight:400;
+  }
+  .ios .menu-inner{
+    background:none !important;
+  }
+  .item-inner{
+    border-bottom:0px !important;
+  }
+  .label-ios{
+    margin: 0px;
+  }
+  .navigation_li_single{
+    line-height: 40px;
+  }
+  .navigation_li_single:after{
+    content: "";
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .navigation_li_single:last-child:after{
+    content: "";
+    display: none;
+  }
+  .navigation_li_single .toggle_nav_icon{   
+    position: relative;
+    width: 12%;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 22px;
+    top: 3px;
+  }
+  .navigation_li_single a{
+    font-size: 14px;
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    position: relative;
+    width: 85% !important;
+    display: inline-block !important;
+  }
+  .navigation_li_single a img{
+    float: right;
+    top: 17px;
+    position: relative;
+  }
+  .ios .menu-inner{
+    background:none !important;
+  }
+  .item-ios{
+    background: none;
+    border-bottom: 0px;
+  }
+  .item-inner{
+    border-bottom:0px !important;
+    height: 20px;
+    margin-top:10px;
+  }
+  .item-block{
+    min-height: 2rem;
+  }
+  .back-button.show-back-button{
+    z-index:100;
+    position: relative;
+    top: -7px;
+    left: -5px;
+  }
+  .back-button-text-ios{
+    display:none;
+  }
+  .back-button-icon-ios{
+    font-size:29px;
+  }
+  .item-md{
+    background: none!important;
+    margin-top: 15px;
+  }
+  .md .menu-inner{
+    background: none!important;
+  }
+  ion-title{
+      position: relative;
+    left: -15px;
+    top: 6px;
+  }
+    .dashboard_navigation_single a img,.dashboard_navigation_single_right a img{
+    display:inline-block;
+  }
+  .dashboard_navigation_single a p,.dashboard_navigation_single_right a p{
+    display:inline-block;
+  }
+  .single_row li{
+    font-size:14px; 
+    line-height:16px;
+  }
+  .dashboard_progress_container{
+    position:relative; margin-top:7px;
+  }
+  .dashboard_progress_container_single{
+    position:relative; 
+    float:left; 
+    margin-right:20px;
+  }
+  .dashboard_progress_container_single div{
+    -webkit-border-radius:2px; 
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+    border-radius:2px;
+    width:30px; 
+    height:15px; 
+    margin-right:3px; 
+    float:left;
+  }
+  .dashboard_progress_container_single p{
+    line-height:18px; 
+    float:left; 
+    font-size:12px; 
+    color:#333a4e;
+  }
 

@@ -8,6 +8,9 @@ import { UsagePage } from '../usage/usage';
 import { OrderPage } from '../order/order';
 import { HandsetPage } from '../handset/handset';
 import { PaymentsPage } from '../payments/payments';
+import { ContractsPage } from '../contracts/contracts';
+import { AccountVerificationPage } from '../account-verification/account-verification';
+import { FaqPage } from '../faq/faq';
 
 import { AuthService } from '../../services/auth/auth';
 
@@ -49,6 +52,16 @@ export class HomePage {
     this.navCtrl.push(PaymentsPage);
   }
 
+  public goToContracts() {
+    this.navCtrl.push(ContractsPage);
+  }
 
+  public goToAccountVerification() {
+    this.navCtrl.push(AccountVerificationPage);
+  }
+
+  public goToFaq() {
+    this.navCtrl.push(FaqPage);
+  }
 
 }

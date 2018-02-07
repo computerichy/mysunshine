@@ -33,7 +33,7 @@
 				</ul>
 			</div>
 
-			<div class="prime_content_single prime_content_red" id="total_overdue_btn">
+			<div class="prime_content_single prime_content_red" id="total_overdue_btn" (click)="goToTotalOverdue()">
 				<ul class="single_row">
 					<li style="width:70%; font-size:15px; line-height:16px;">Total Overdue:</li>
 					<li style="width:23%; font-size:15px; line-height:16px; text-align:center;">&pound;32.75</li>
@@ -85,7 +85,7 @@
 			<div class="mothly_payments_wrapper" style="margin-top:30px;">
 				<h3>Latest Payments</h3>
 				<div class="grey_br"></div>				
-				<div class="latest_payments_single prime_content_red">
+				<div class="latest_payments_single prime_content_red" (click)="goToLatestPayments()">
 					<ul class="single_row">
 						<li style="width:70%; font-size:14px; line-height:16px;">March:</li>
 						<li style="width:23%; font-size:13px; line-height:16px; text-align:center;">Overdue</li>
@@ -93,7 +93,7 @@
 						<div class="clear"></div>
 					</ul>
 				</div>
-				<div class="latest_payments_single" >
+				<div class="latest_payments_single" (click)="goToLatestPayments()" >
 					<ul class="single_row">
 						<li style="width:70%; font-size:14px; line-height:16px;">February:</li>
 						<li style="width:23%; font-size:13px; line-height:16px; text-align:center;">Paid</li>
@@ -101,7 +101,7 @@
 						<div class="clear"></div>
 					</ul>
 				</div>
-				<div class="latest_payments_single">
+				<div class="latest_payments_single" (click)="goToLatestPayments()">
 					<ul class="single_row">
 						<li style="width:70%; font-size:14px; line-height:16px;">January:</li>
 						<li style="width:23%; font-size:13px; line-height:16px; text-align:center;">Paid</li>
