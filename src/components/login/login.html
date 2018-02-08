@@ -1,14 +1,14 @@
-<form (ngSubmit)="attemptLogin()">
+<form [formGroup]="form" (ngSubmit)="attemptLogin()">
  
     <ion-item>
       <ion-label>Username</ion-label>
-      <ion-input type="text" name="username"></ion-input>
+      <ion-input type="text" formControlName="username"></ion-input>
     </ion-item>
     <a href="#" block>I don't remember my login</a>
 
     <ion-item>
       <ion-label>Password</ion-label>
-      <ion-input type="password" name="password"></ion-input>
+      <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <a href="#" block>I don't remember my password</a>
 

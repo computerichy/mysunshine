@@ -10,21 +10,33 @@ import { Dialogs } from '@ionic-native/dialogs';
 
 import * as CONSTANTS from '../../app/app.constants';
 
+import { Profile } from '../../models/profile';
+ 
+import { SunshineApiProvider } from '../../providers/sunshine-api/sunshine-api';
+
 @Injectable()
 export class AuthService {
+   
+ 
+    public profile : Profile;
 
     constructor(private http: HttpClient, 
-                private dialogs: Dialogs) {
+                private dialogs: Dialogs,
+                public sunshineApi: SunshineApiProvider) {
     }
 
-    login(email:string, password:string ) {
-        return this.http.post('https://sunshinemobile.co.uk:8097/api/login', {email, password})
+    login(username:string, password:string ) {
+        return this.http.post('https://sunshinemobile.co.uk:8097/api/login', {username, password})
           .pipe(
              tap(authResult => {  
-              this.setSession(authResult);
+                  
+
+              if (!authResult.error) this.setSession(authResult);
+               
               return authResult;
-            }),
-            catchError(this.handleError('login', []))
+            })//,
+  //             catchError(this.handleError('login', []))
+
         );
 
     }
@@ -33,9 +45,15 @@ export class AuthService {
     
       const token = authResult.authToken,
         tokenDecoded = jwtdecode(token);
-
+      
+      
       localStorage.setItem('authToken', authResult.authToken);
-      localStorage.setItem('authExpiresAt', `${tokenDecoded.exp}`);
+      localStorage.setItem('authExpiresAt', `${tokenDecoded.exp}`);      
+   
+      this.sunshineApi.getProfile().subscribe(data => {
+        this.profile = data;
+
+      });
 
     }
 
@@ -64,7 +82,7 @@ export class AuthService {
     private handleError<T> (operation = 'operation', result?: T) {
       return (error: any): Observable<T> => {
 
-        console.log(error);
+        console.log('GOT AUTH COMMUNICATION ERROR ', error);
     
         this.dialogs.alert(`${operation} failed: ${error.message}`);
 

@@ -10,7 +10,7 @@
 	}
 </style>
 <ion-scroll scrollY="true" style="width: 100%; height: 100%; background-color: #f9fafb;">
-	<ion-header>
+ 	<ion-header>
 	  <ion-navbar>
 	    <div class="nav_btn nav_btn_article">
 	    	<ion-icon name="menu" class="nav_article_menu"></ion-icon>
@@ -31,39 +31,39 @@
 					<table id="my_profile_display">
 						<tr>
 							<td class="profile_placeholder">Title:</td>
-							<td class="profile_entry">Mr</td>
+							<td class="profile_entry">{{profile.title}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">First name:</td>
-							<td class="profile_entry">Karl</td>
+							<td class="profile_entry">{{profile.forename}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">Surname:</td>
-							<td class="profile_entry">Scott</td>
+							<td class="profile_entry">{{profile.surname}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">Address 1:</td>
-							<td class="profile_entry">12 Great Park Road</td>
+							<td class="profile_entry">{{profile.address1}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">Address 2:</td>
-							<td class="profile_entry">Kimberworth</td>
+							<td class="profile_entry">{{profile.address2}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">Town/ City:</td>
-							<td class="profile_entry">Rotheram</td>
+							<td class="profile_entry">{{profile.address3}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">Postcode:</td>
-							<td class="profile_entry">S61 3QF</td>
+							<td class="profile_entry">{{profile.postcode}}</td>
 						</tr>
 						<tr>
 							<td class="profile_placeholder">Phone number:</td>
-							<td class="profile_entry">Karl</td>
+							<td class="profile_entry">{{profile.tel_home}}</td>
 						</tr>
 						<tr style="border-bottom:0px;">
 							<td class="profile_placeholder">Email address:</td>
-							<td class="profile_entry">Karl@hotmail.com</td>
+							<td class="profile_entry">{{profile.email}}</td>
 						</tr>
 					</table>
 				</div>
@@ -77,39 +77,39 @@
 				<div>
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Title</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="Mr" />
+						<input class="profile_placeholder_input" type="text" name="" value="Mr" />
 					</div>
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">First name</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="Karl" />
+						<input class="profile_placeholder_input" type="text" name=""  value="Karl" />
 					</div>	
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Surname</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="Scott" />
+						<input class="profile_placeholder_input" type="text" name="" value="Scott" />
 					</div>	
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Address 1</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="39 Great Park Road" />
+						<input class="profile_placeholder_input" type="text" name="" value="39 Great Park Road" />
 					</div>	
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Address 2</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="Kimberworth" />
+						<input class="profile_placeholder_input" type="text" name=""  value="Kimberworth" />
 					</div>						
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Town/ City</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="Kimberworth" />
+						<input class="profile_placeholder_input" type="text" name="" value="Kimberworth" />
 					</div>						
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Postcode</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="S61 3QF" />
+						<input class="profile_placeholder_input" type="text" name=""  value="S61 3QF" />
 					</div>						
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Phone number</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="07557685022" />
+						<input class="profile_placeholder_input" type="text" name="" value="07557685022" />
 					</div>
 					<div class="personal_details_edit_single">
 						<label class="profile_placeholder_edit">Email Address</label>
-						<input class="profile_placeholder_input" type="text" name="" id="" value="karl@hotmail.com" />
+						<input class="profile_placeholder_input" type="text" name="" value="karl@hotmail.com" />
 					</div>
 					<button class="update_btn">Update Settings</button>
 				</div>
