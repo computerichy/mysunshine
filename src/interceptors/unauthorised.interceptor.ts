@@ -7,11 +7,11 @@ import { Events } from 'ionic-angular';
 import {
   HttpRequest,
   HttpHandler,
-  HttpEvent,
+  HttpEvent, 
   HttpResponse,
   HttpErrorResponse,
   HttpInterceptor
-} from '@angular/common/http';
+} from '@angular/common/http'; 
 
 import { LoginPage } from '../pages/login/login';
 
@@ -27,7 +27,7 @@ export class UnauthorisedInterceptor implements HttpInterceptor {
       }
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
-        if (err.status === 401) {
+        if (err.status === 401) { 
           this.events.publish('user:logout');
           console.log('unauth!');
    

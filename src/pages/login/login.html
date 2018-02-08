@@ -1,22 +1,57 @@
-<!--
-  Generated template for the LoginPage page.
- 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<style type="text/css">
 
-  <ion-navbar>
-    <ion-title>Sign in to account</ion-title>
-  </ion-navbar>
-
-</ion-header>
+.dashboard_header_name h1{
+	font-size: 27px;
+}
+.dashboard_header_name h1{
+	margin-top:0px;
+	padding-top:100px;
+}
 
 
-<ion-content padding>
 
-  <p>Get that username and pass typed in now!</p>
 
-  <login></login>
 
-</ion-content>
+
+  .global_nav_container{
+    margin-top:0px; 
+    padding:15px; 
+    list-style-type: none;
+  }
+</style>
+<ion-scroll scrollY="true" style="width: 100%; height: 100%;">
+  <div class="page" data-page="My Handset" id="dashboard">
+
+<!-- header -->
+  <!-- sticky navigation-->
+    <div class="header_bg dashboard_header">      
+  <!-- end of sticky navigation-->      
+      <div class="clear"></div>
+      <div class="dashboard_header_name">
+        <h1>Hello &amp; welcome</h1>
+      </div>
+    </div>
+<!-- end of header -->
+
+
+    <div class="dashboard_wrapper">           
+      <div class="dashboard_content_single prime_content_single prime_content_standard">
+        <ul class="single_row">
+          <li style="width:100%; font-size:16px; line-height:16px;"><p>Please enter your login details</p></li>
+          <div class="clear"></div>
+        </ul>
+        <div class="grey_br"></div>
+        <ul class="single_row">
+          		    <login></login>
+
+
+
+          <div class="clear"></div>
+        </ul>
+      </div>
+    </div>
+
+
+
+  </div>
+</ion-scroll>
