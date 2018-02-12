@@ -36,10 +36,8 @@ export class AuthService {
                if (!authResult.hasOwnProperty('error'))
                  this.loadProfile(authResult);     
                console.log('login result ' , authResult);
-                console.log('awdwa'); 
-              return authResult;
-             
-            })
+               return authResult;
+             })
           );
     }
 
@@ -63,10 +61,11 @@ export class AuthService {
        });
     }
 
-    public logout() {
+    private logout() {
+
       localStorage.removeItem('authToken');
       localStorage.removeItem('authExpiresAt');
-      localStorage.removeItem('authProfile');
+
     }
 
     get isLoggedIn() : boolean {

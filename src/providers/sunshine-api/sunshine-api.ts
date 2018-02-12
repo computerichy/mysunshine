@@ -4,8 +4,10 @@ import { constants } from '../../app/app.constants';
 import 'rxjs/add/operator/map';
 import { catchError } from 'rxjs/operators/catchError';
 import { Profile } from '../../models/profile';
+import { Collection } from '../../models/collection';
 
-
+import {Observable} from 'rxjs/Observable';
+ 
 /*
   Generated class for the SunshineApiProvider provider.
 
@@ -22,11 +24,23 @@ export class SunshineApiProvider {
     console.log(this.API_URL);
   }
 
-   public getProfile() {
+   public getProfile() : Observable<Profile> {
      return this.http.get<Profile>(this.API_URL+'profile');
        //.map(response => {
         //  return new Profile(response);
       // });
+   }
+
+   public getCollections(): Observable<Collection[]> {
+     return this.http.get<Collection[]>(this.API_URL+'collections');
+   }
+
+   public getNextCollection(): Observable<Collection> {
+     return this.http.get<Collection>(this.API_URL+'collections?next');
+   }
+
+   public getUsage(): Observable<Usage[]> {
+     return this.http.get<Usage>(this.API_URL+'usage');
    }
 
    private handleError(error: Response) {

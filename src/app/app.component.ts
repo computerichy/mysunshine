@@ -15,8 +15,9 @@ import { NavController } from 'ionic-angular';
 })
 export class MyApp {
   @ViewChild('myNav') nav: NavController
-  rootPage:any = HomePage;
    
+//  rootPage:any = HomePage;
+    rootPage:any;
 
   constructor(platform: Platform, 
               statusBar: StatusBar,
@@ -27,20 +28,27 @@ export class MyApp {
   
     ) {
 
-      this.headerColor.tint('#ffdd00');
-      this.rootPage = auth.isLoggedIn() ? HomePage : LoginPage;  
+      this.headerColor.tint('#ffa200');
          
- 
-      platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
-      this.subscribeEvents();
-    });
+    
+//      this.auth.loadProfile().subscribe(data => {
+
+// this.rootPage = LoginPage;           
+       this.rootPage = auth.isLoggedIn ? HomePage : LoginPage;  
+
+       platform.ready().then(() => {
+        // Okay, so the platform is ready and our plugins are available.
+        // Here you can do any higher level native things you might need.
+        statusBar.styleDefault();
+        statusBar.backgroundColorByHexString('#ffdd00');
+        splashScreen.hide();
+        this.subscribeEvents();
+       });
+
+  //  });
+
   }
 
-  
 
   public subscribeEvents() { 
 
@@ -49,6 +57,13 @@ export class MyApp {
         this.nav.setRoot(LoginPage, {}, {animate: true, direction: "forward"});
       }
     });
+
+    this.events.subscribe('auth:ready', () => {
+      
+    });
+ 
+
+ 
  
 
   }  

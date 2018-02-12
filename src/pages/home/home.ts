@@ -1,29 +1,49 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { LoginPage } from '../login/login';
 import { ProfilePage } from '../profile/profile';
-import { DeliveryPage } from '../delivery/delivery';
-import { UsagePage } from '../usage/usage';
-import { OrderPage } from '../order/order';
-import { HandsetPage } from '../handset/handset';
 import { PaymentsPage } from '../payments/payments';
-import { ContractsPage } from '../contracts/contracts';
-import { AccountVerificationPage } from '../account-verification/account-verification';
-import { FaqPage } from '../faq/faq';
+import { HandsetPage } from '../handset/handset';
+import { OrderPage } from '../order/order';
+import { UsagePage } from '../usage/usage';
+import { DeliveryPage } from '../delivery/delivery';
+
+import { Collection } from '../../models/collection';
+import * as moment from 'moment';
 
 import { AuthService } from '../../services/auth/auth';
 
+
+
+
+
+import { SunshineApiProvider } from '../../providers/sunshine-api/sunshine-api';
+
+
+  
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public authService: AuthService) {
-    console.log(authService.profile);
-  }
+  nextCollection : Collection;
+  greetingWord : string;
 
+  constructor(public navCtrl: NavController, 
+    public authService: AuthService, 
+    public sunshineApi : SunshineApiProvider) {
+
+    sunshineApi.getNextCollection()
+      .subscribe(data => {
+        this.nextCollection = data;
+      });
+
+    this.greetingWord = this.getGreetingTime(moment());
+
+
+  }
+ 
   public goToProfile() {
     this.navCtrl.push(ProfilePage);
   }
@@ -63,5 +83,25 @@ export class HomePage {
   public goToFaq() {
     this.navCtrl.push(FaqPage);
   }
+
+  public getGreetingTime (m) {
+	var g = null; 
+	
+	if(!m || !m.isValid()) { return; } 
+	
+	var split_afternoon = 12; 
+	var split_evening = 17;
+	var currentHour = parseFloat(m.format("HH"));
+	
+	if(currentHour >= split_afternoon && currentHour <= split_evening) {
+		g = "afternoon";
+	} else if(currentHour >= split_evening) {
+		g = "evening";
+	} else {
+		g = "morning";
+	}
+	
+	return g;
+     }
 
 }

@@ -8,6 +8,9 @@ import { HeaderColor } from '@ionic-native/header-color';
 
 import { AuthService } from '../services/auth/auth';    
 
+import { SunshineApiProvider } from '../providers/sunshine-api/sunshine-api';
+
+
  
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -38,7 +41,10 @@ import { ContractsPage } from '../pages/contracts/contracts';
 
 import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
 import { LoginComponent } from '../components/login/login';
-import { SunshineApiProvider } from '../providers/sunshine-api/sunshine-api';
+import { NavbarComponent } from '../components/navbar/navbar';
+
+
+
 
 
 @NgModule({
@@ -53,6 +59,7 @@ import { SunshineApiProvider } from '../providers/sunshine-api/sunshine-api';
     ProfilePage,
     PaymentsPage,
     SunnyProgressComponent,
+    NavbarComponent,
     LoginComponent,
     TotalOverduePage,
     LatestPaymentsPage,
