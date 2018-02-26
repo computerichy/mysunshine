@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Observable } from 'rxjs'; 
 /**
  * Generated class for the PaymentsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+ 
 
 import { LatestPaymentsPage } from '../latest-payments/latest-payments';
 import { TotalOverduePage } from '../total-overdue/total-overdue';
+
+import { SunshineApiProvider } from '../../providers/sunshine-api/sunshine-api';
+
+import { Collection } from '../../models/collection';
 
 @IonicPage()
 @Component({
@@ -18,8 +22,42 @@ import { TotalOverduePage } from '../total-overdue/total-overdue';
   templateUrl: 'payments.html',
 })
 export class PaymentsPage {
+  
+  nextCollection: Collection;
+  collections: Collection[] = [];
+  currentMonthCollections: Collection[] = [];
+  amountOverdue: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public sunshineApi: SunshineApiProvider) {
+    
+console.log("payments constructor");
+    sunshineApi.getCollections()
+      .subscribe(data => {
+        this.collections = data;
+        let now = new Date(); 
+  
+        for (let key in data) {
+          let collection = data[key];
+          let dueDate = new Date(collection.due_date);
+        
+          if (dueDate.getMonth() == now.getMonth() && dueDate.getFullYear() == now.getFullYear())
+            this.currentMonthCollections.push(collection);   
+   
+          if (collection.status != 4 && now > dueDate) this.amountOverdue+=collection.amount;
+           
+        }        
+
+      });
+
+     sunshineApi.getNextCollection()
+       .subscribe(data => {
+         this.nextCollection = data;
+         
+       }); 
+  
   }
 
 

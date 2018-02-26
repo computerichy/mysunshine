@@ -7,8 +7,11 @@ import { HandsetPage } from '../handset/handset';
 import { OrderPage } from '../order/order';
 import { UsagePage } from '../usage/usage';
 import { DeliveryPage } from '../delivery/delivery';
-
+import { LoginPage } from '../login/login';
+import { ContractsPage } from '../contracts/contracts';
 import { Collection } from '../../models/collection';
+import { AccountVerificationPage } from '../account-verification/account-verification';
+import { FaqPage } from '../faq/faq';
 import * as moment from 'moment';
 
 import { AuthService } from '../../services/auth/auth';

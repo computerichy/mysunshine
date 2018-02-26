@@ -19,16 +19,16 @@
 	  </ion-navbar>
 	</ion-header>
 		<div class="prime_wrapper">
-			<div class="prime_content_single prime_content_yellow" *ngIf="nextCollection">
+			<div class="prime_content_single prime_content_yellow">
 				<ul class="single_row">
 					<li style="width:65%; font-size:15px; line-height:16px;">Next Payment Date:</li>
-					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">{{nextCollection.due_date | date:longDate}}</li>
+					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">12/03/2018</li>
 					<div class="clear"></div>
 				</ul>
 				<div class="yellow_br"></div>
 				<ul class="single_row">
 					<li style="width:65%; font-size:15px; line-height:16px;">Next Payment Amount</li>
-					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">&pound;{{nextCollection.amount}}</li>
+					<li style="width:35%; font-size:15px; line-height:16px; text-align:right;">&pound;13.56</li>
 					<div class="clear"></div>
 				</ul>
 			</div>
@@ -36,7 +36,7 @@
 			<div class="prime_content_single prime_content_red" id="total_overdue_btn" (click)="goToTotalOverdue()">
 				<ul class="single_row">
 					<li style="width:70%; font-size:15px; line-height:16px;">Total Overdue:</li>
-					<li style="width:23%; font-size:15px; line-height:16px; text-align:center;">&pound;{{amountOverdue}}</li>
+					<li style="width:23%; font-size:15px; line-height:16px; text-align:center;">&pound;32.75</li>
 					<li style="width:7%; text-align:center;"><img style="position:relative;top:2px;" src="assets/imgs/red_arrow_right.png" alt="" title="" /></li>
 					<div class="clear"></div>
 				</ul>
@@ -56,11 +56,33 @@
 						<tbody>
                                                      <tr *ngFor="let collection of currentMonthCollections">
                                                           <td></td>
-                                                          <td>{{collection.due_date | date:longDate}}</td>
-                                                          <td style="text-align:center;">&pound;{{collection.amount}}</td>
-                                                          <td style="text-align:center;">{{collection.status}}</td>
-                                                        </tr>
+                                                          <td>{{collection.due_date}}</td>
+                                                     </tr>
 
+							<tr>
+ 								<td></td>
+								<td>01/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Paid</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>12/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Overdue</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>19/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Pending</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>27/05/2018</td>
+								<td style="text-align:center;">&pound;29.99</td>
+								<td style="text-align:center;">Pending</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>

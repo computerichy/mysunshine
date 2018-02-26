@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+ 
 import { LoginPage } from '../../pages/login/login';
 import { ProfilePage } from '../../pages/profile/profile';
 import { DeliveryPage } from '../../pages/delivery/delivery';

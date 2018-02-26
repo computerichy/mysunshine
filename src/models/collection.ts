@@ -1,8 +1,6 @@
 export class Collection {
-
-
- constructor() {
-
- }
-
+  id: number;
+  due_date: string;
+  status: number;
+  amount: number;
 }

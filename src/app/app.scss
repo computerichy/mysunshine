@@ -155,6 +155,16 @@ ion-app.md{
   padding: 15px !important;
   margin: auto auto 18px auto !important;
 }
+.button-md {
+    border-radius: 4px;
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: #000;
+    background-color: #ffdd00;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+}
+
 .navbar_title{
   font-size: 24px;
   color: #fff;
@@ -380,7 +390,7 @@ ion-app.md{
   .item-block{
     min-height:29px;
   }
-  .button-md{
+ /* .button-md{
     transition: none;
     margin-top: 25px;
     font-size: 18px;
@@ -393,7 +403,7 @@ ion-app.md{
     width: 100%;
     height: 60px;
     margin: 20px auto;
-  }
+  }*/
   .label-ios{
     display: block;
     position: relative;
@@ -431,7 +441,9 @@ ion-app.md{
   .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input{
     margin-left:22px;
   }
-  .button-ios{
+  .button-ios, .button-md{
+    box-shadow: none !important;
+    text-transform: none !important;
     -webkit-border-radius:25px;
     -moz-border-radius:25px;
     -ms-border-radius:25px;

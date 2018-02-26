@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import { catchError } from 'rxjs/operators/catchError';
 import { Profile } from '../../models/profile';
 import { Collection } from '../../models/collection';
+import { Usage } from '../../models/usage';
+import { Handset } from '../../models/handset';
 
 import {Observable} from 'rxjs/Observable';
  
@@ -32,6 +34,7 @@ export class SunshineApiProvider {
    }
 
    public getCollections(): Observable<Collection[]> {
+     console.log('getcollections'); 
      return this.http.get<Collection[]>(this.API_URL+'collections');
    }
 
@@ -39,9 +42,13 @@ export class SunshineApiProvider {
      return this.http.get<Collection>(this.API_URL+'collections?next');
    }
 
-   public getUsage(): Observable<Usage[]> {
+   public getUsage(): Observable<Usage> {
      return this.http.get<Usage>(this.API_URL+'usage');
    }
+
+   public getHandset(): Observable<Handset> { 
+     return this.http.get<Handset>(this.API_URL+'handset');
+   } 
 
    private handleError(error: Response) {
      return console.error(error.statusText);

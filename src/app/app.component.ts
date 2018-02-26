@@ -6,10 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { LockPage } from '../pages/lock/lock';
 import { AuthService } from '../services/auth/auth';
 import { NavController } from 'ionic-angular';
- 
- 
+import { Device } from '@ionic-native/device'; 
+  
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,28 +26,31 @@ export class MyApp {
               splashScreen: SplashScreen,
               public events: Events,
               public auth: AuthService,
-              public headerColor: HeaderColor
+              public headerColor: HeaderColor,
+              private device: Device
   
     ) {
 
       this.headerColor.tint('#ffa200');
-         
+  
+       let deviceLocked = false;
     
-//      this.auth.loadProfile().subscribe(data => {
+       this.rootPage = deviceLocked 
+       ? LockPage : auth.isLoggedIn 
+       ? HomePage : LoginPage; 
 
-// this.rootPage = LoginPage;           
-       this.rootPage = auth.isLoggedIn ? HomePage : LoginPage;  
 
        platform.ready().then(() => {
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
-        statusBar.styleDefault();
+
+//          statusBar.styleDefault();
+
         statusBar.backgroundColorByHexString('#ffdd00');
+        statusBar.overlaysWebView(true);
         splashScreen.hide();
         this.subscribeEvents();
        });
-
-  //  });
 
   }
 

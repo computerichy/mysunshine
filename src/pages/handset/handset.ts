@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SunshineApiProvider } from '../../providers/sunshine-api/sunshine-api';
+import { Handset } from '../../models/handset';
 /**
  * Generated class for the HandsetPage page.
  *
@@ -14,10 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'handset.html',
 })
 export class HandsetPage {
+   
+  public handset: Handset;
+  
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public sunshineApi: SunshineApiProvider) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+console.log(sunshineApi.getHandset());   
+    sunshineApi.getHandset()
+      .subscribe(data => {
+        this.handset = data;
+      });
   }
 
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HandsetPage');
   }

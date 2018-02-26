@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
 //import { NavController } from 'ionic-angular';
 import { HeaderColor } from '@ionic-native/header-color'; 
 
@@ -17,7 +15,20 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../interceptors/authtoken.interceptor';
 import { UnauthorisedInterceptor } from '../interceptors/unauthorised.interceptor';
 
+
+//Ionic Natives ==================
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { Dialogs } from '@ionic-native/dialogs'; 
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { Camera } from '@ionic-native/camera';
+import { Device } from '@ionic-native/device';
+
+
+
+
 
 //Pages ======================
 
@@ -35,7 +46,7 @@ import { LatestPaymentsPage } from '../pages/latest-payments/latest-payments';
 import { FaqPage } from '../pages/faq/faq';
 import { AccountVerificationPage } from '../pages/account-verification/account-verification';
 import { ContractsPage } from '../pages/contracts/contracts';
-
+import { LockPage } from '../pages/lock/lock';
 
 //Custom components =====================
 
@@ -58,6 +69,7 @@ import { NavbarComponent } from '../components/navbar/navbar';
     DeliveryPage,
     ProfilePage,
     PaymentsPage,
+    LockPage,
     SunnyProgressComponent,
     NavbarComponent,
     LoginComponent,
@@ -83,6 +95,7 @@ import { NavbarComponent } from '../components/navbar/navbar';
     UsagePage,
     HandsetPage,
     OrderPage,
+    LockPage,
     PaymentsPage,
     DeliveryPage, 
     TotalOverduePage,
@@ -97,6 +110,10 @@ import { NavbarComponent } from '../components/navbar/navbar';
     HeaderColor,
     AuthService,
     //NavController,
+    File,
+    Transfer,
+    Device,
+    Camera,
     Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
