@@ -4,9 +4,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { LockPage } from '../pages/lock/lock';
 import { AuthService } from '../services/auth/auth';
 import { NavController } from 'ionic-angular';
 import { Device } from '@ionic-native/device'; 
@@ -36,8 +35,8 @@ export class MyApp {
        let deviceLocked = false;
     
        this.rootPage = deviceLocked 
-       ? LockPage : auth.isLoggedIn 
-       ? HomePage : LoginPage; 
+       ? 'LockPage' : auth.isLoggedIn 
+       ? 'HomePage' : 'LoginPage'; 
 
 
        platform.ready().then(() => {
@@ -59,7 +58,7 @@ export class MyApp {
 
     this.events.subscribe('user:logout', () => {
       if (!(this.nav.getActive().instance instanceof LoginPage)) {
-        this.nav.setRoot(LoginPage, {}, {animate: true, direction: "forward"});
+        this.nav.setRoot('LoginPage', {}, {animate: true, direction: "forward"});
       }
     });
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { IonicPage, NavController } from 'ionic-angular';
+ 
 import { ProfilePage } from '../profile/profile';
 import { PaymentsPage } from '../payments/payments';
 import { HandsetPage } from '../handset/handset';
@@ -14,16 +14,14 @@ import { AccountVerificationPage } from '../account-verification/account-verific
 import { FaqPage } from '../faq/faq';
 import * as moment from 'moment';
 
+import { SunnyProgressComponent } from '../../components/sunny-progress/sunny-progress';
 import { AuthService } from '../../services/auth/auth';
-
-
 
 
 
 import { SunshineApiProvider } from '../../providers/sunshine-api/sunshine-api';
 
-
-  
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -48,7 +46,7 @@ export class HomePage {
   }
  
   public goToProfile() {
-    this.navCtrl.push(ProfilePage);
+    this.navCtrl.push('ProfilePage');
   }
 
   public goToDelivery() {

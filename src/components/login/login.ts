@@ -72,7 +72,7 @@ export class LoginComponent {
 
              } else  {
               console.log("LOGIN SUCCESS - SET ROOT TO HOME");
-              this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: "forward"});
+              this.navCtrl.setRoot('HomePage', {}, {animate: true, direction: "forward"});
              }
 
          },

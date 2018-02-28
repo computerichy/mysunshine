@@ -37,43 +37,43 @@ export class NavbarComponent {
   }
    
   public goToProfile() {
-    this.navCtrl.push(ProfilePage);
+    this.navCtrl.push('ProfilePage');
   }
 
   public goToDelivery() {
-    this.navCtrl.push(DeliveryPage);
+    this.navCtrl.push('DeliveryPage');
   }
 
   public goToUsage() {
-    this.navCtrl.push(UsagePage);
+    this.navCtrl.push('UsagePage');
   }
 
   public goToLogin() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push('LoginPage');
   }
 
   public goToOrder() {
-    this.navCtrl.push(OrderPage);
+    this.navCtrl.push('OrderPage');
   }
 
   public goToHandset() {
-    this.navCtrl.push(HandsetPage);
+    this.navCtrl.push('HandsetPage');
   }
 
   public goToPayments() {
-    this.navCtrl.push(PaymentsPage);
+    this.navCtrl.push('PaymentsPage');
   }
 
   public goToContracts() {
-    this.navCtrl.push(ContractsPage);
+    this.navCtrl.push('ContractsPage');
   }
 
   public goToAccountVerification() {
-    this.navCtrl.push(AccountVerificationPage);
+    this.navCtrl.push('AccountVerificationPage');
   }
 
   public goToFaq() {
-    this.navCtrl.push(FaqPage);
+    this.navCtrl.push('FaqPage');
   }
 
   public logout() {
@@ -92,7 +92,7 @@ export class NavbarComponent {
         text: 'Yes, sign me out',
         handler: () => {
           this.authService.logout();
-          this.navCtrl.push(LoginPage);
+          this.navCtrl.push('LoginPage');
         }
       }
     ]

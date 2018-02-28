@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
+import { IonicModule } from 'ionic-angular';
 import { SunnyProgressComponent } from './sunny-progress/sunny-progress';
-import { SunnyBlockbarComponent } from './sunny-blockbar/sunny-blockbar';
-import { MagicComponent } from './magic/magic';
 import { LoginComponent } from './login/login';
 import { NavbarComponent } from './navbar/navbar';
 @NgModule({
-	declarations: [SunnyProgressComponent,
-    SunnyBlockbarComponent,
-    MagicComponent,
+	declarations: [
+    SunnyProgressComponent,
     LoginComponent,
     NavbarComponent],
-	imports: [],
-	exports: [SunnyProgressComponent,
-    SunnyBlockbarComponent,
-    MagicComponent,
+	imports: [IonicModule],
+	exports: [
+     SunnyProgressComponent,
     LoginComponent,
     NavbarComponent]
 })
 export class ComponentsModule {}
+
+

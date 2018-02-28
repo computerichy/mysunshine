@@ -35,8 +35,8 @@ import { Device } from '@ionic-native/device';
 //Pages ======================
 
 import { MyApp } from './app.component'; 
-//import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
+import { HomePage } from '../pages/home/home';
+//import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { PaymentsPage } from '../pages/payments/payments';
 import { UsagePage } from '../pages/usage/usage';
@@ -48,30 +48,43 @@ import { LatestPaymentsPage } from '../pages/latest-payments/latest-payments';
 import { FaqPage } from '../pages/faq/faq';
 //import { AccountVerificationPage } from '../pages/account-verification/account-verification';
 //import { ContractsPage } from '../pages/contracts/contracts';
-//import { LockPage } from '../pages/lock/lock';
+import { LockPage } from '../pages/lock/lock';
 
 //Custom components =====================
 
-//import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
+import { SunnyProgressComponent } from '../components/sunny-progress/sunny-progress';
 //import { LoginComponent } from '../components/login/login';
-//import { NavbarComponent } from '../components/navbar/navbar';
+import { NavbarComponent } from '../components/navbar/navbar';
 
 
-import { ComponentsModule } from '../components/components.module';
+
 
 
 @NgModule({
   declarations: [
-    MyApp
-    //HomePage
+    MyApp,
+    HomePage,
    //LoginPage,
-  //  LoginComponent,
-    //NavbarComponent,
-   // SunnyProgressComponent
+    NavbarComponent,
+    SunnyProgressComponent
+
+  /*  UsagePage,
+    HandsetPage,
+    OrderPage,
+    DeliveryPage,
+    ProfilePage,
+    PaymentsPage,
+    LockPage,
+    //LoginComponent,
+    TotalOverduePage,
+    LatestPaymentsPage,
+    FaqPage,
+  //AccountVerificationPage,
+    //ContractsPage
+*/
   ],
   imports: [
     BrowserModule,
-   // ComponentsModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: ''
@@ -79,16 +92,25 @@ import { ComponentsModule } from '../components/components.module';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
-
-    //HomePage,
-   // LoginPage,
-    //LoginComponent,
-    //NavbarComponent,     
-   // SunnyProgressComponent
-  ],
-  exports: [
-    //LoginComponent
+    MyApp,
+     HomePage,
+    //LoginPage,
+    NavbarComponent,    
+SunnyProgressComponent
+  /*  //LoginComponent,
+    ProfilePage,
+    UsagePage,
+    HandsetPage,
+    OrderPage,
+    LockPage,
+    PaymentsPage,
+    DeliveryPage, 
+    TotalOverduePage,
+    LatestPaymentsPage,
+    FaqPage,
+   // AccountVerificationPage,
+    ContractsPage
+    */
   ],
   providers: [
     StatusBar,
