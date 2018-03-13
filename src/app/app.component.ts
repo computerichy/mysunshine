@@ -7,7 +7,7 @@ import { Events } from 'ionic-angular';
 //import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth/auth';
-import { NavController } from 'ionic-angular';
+import { Nav, NavController } from 'ionic-angular';
 import { Device } from '@ionic-native/device'; 
   
 
@@ -15,7 +15,8 @@ import { Device } from '@ionic-native/device';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild('myNav') nav: NavController
+  @ViewChild('myNav') navCtrl: NavController
+  @ViewChild(Nav) nav: Nav;
    
 //  rootPage:any = HomePage;
     rootPage:any;
@@ -38,17 +39,11 @@ export class MyApp {
        ? 'LockPage' : auth.isLoggedIn 
        ? 'HomePage' : 'LoginPage'; 
 
-
        platform.ready().then(() => {
-        // Okay, so the platform is ready and our plugins are available.
-        // Here you can do any higher level native things you might need.
-
-//          statusBar.styleDefault();
-
-        statusBar.backgroundColorByHexString('#ffdd00');
-        statusBar.overlaysWebView(true);
-        splashScreen.hide();
-        this.subscribeEvents();
+         statusBar.backgroundColorByHexString('#ffdd00');
+         statusBar.overlaysWebView(true);
+         splashScreen.hide();
+         this.subscribeEvents();
        });
 
   }
@@ -57,20 +52,17 @@ export class MyApp {
   public subscribeEvents() { 
 
     this.events.subscribe('user:logout', () => {
-      if (!(this.nav.getActive().instance instanceof LoginPage)) {
-        this.nav.setRoot('LoginPage', {}, {animate: true, direction: "forward"});
+      if (!(this.navCtrl.getActive().instance instanceof LoginPage)) {
+        this.navCtrl.setRoot('LoginPage', {}, {animate: true, direction: "forward"});
       }
     });
 
     this.events.subscribe('auth:ready', () => {
       
     });
- 
-
- 
- 
 
   }  
+
 
 
 }

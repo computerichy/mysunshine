@@ -18,25 +18,25 @@
 	    <ion-title>My Handset</ion-title>
 	  </ion-navbar>
 	</ion-header>
-	<div class="prime_wrapper">
+	<div *ngIf="this.handset" class="prime_wrapper">
 		<div class="prime_content_single prime_content_yellow">
 			<ul class="single_row">
 				<p style="font-size:15px; line-height:18px; text-align:center;">You will receive your chosen handset once we have received 3 full consecutive monthly payments</p>								
 				<div class="clear"></div>
 			</ul>
 		</div>
-		<div class="prime_content_single prime_content_standard">
+		<div  class="prime_content_single prime_content_standard">
 			<div style="width:40%; float:left; margin-right:5%;">
-				<img src="assets/imgs/iphone_img.png" alt="" title="" />
-			</div>
+				<img src="{{handset.variant_filename}}" alt="" title="" />
+			</div> 
 			<div style="width:55%; float:left; position:relative; top:30px;">
-				<p style="font-size:18px; color:#333a4e; line-height:29px;">iPhone 8 Plus</p>
-				<p style="font-size:14px; color:#333a4e;">128GB Black</p>
+				<p style="font-size:18px; color:#333a4e; line-height:29px;">{{handset.product_name}}</p>
+				<p style="font-size:14px; color:#333a4e;">{{handset.variant_name}}</p>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div id="footer_phone_container">
-      		<img src="assets/imgs/my_phone_icon.png" alt="" title="" /><p>07557685022</p>
+      		<img id="footer_phone_img" src="assets/imgs/my_phone_icon.png" alt="" title="" /><p id="footer_msisdn">07557685022</p>
 		</div>
 	</div>
 </ion-scroll>

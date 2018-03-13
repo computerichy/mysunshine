@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { constants } from '../../app/app.constants';
 import 'rxjs/add/operator/map';
@@ -27,12 +27,21 @@ export class SunshineApiProvider {
   }
 
    public getProfile() : Observable<Profile> {
-     return this.http.get<Profile>(this.API_URL+'profile');
+     return this.http.get<Profile>(this.API_URL+'profile'); 
        //.map(response => {
         //  return new Profile(response);
       // });
    }
 
+   public updateProfile(newProfile) : Observable<Profile> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put<Profile>(this.API_URL+'profile', newProfile, {
+      headers: headers
+    });
+      
+  }
    public getCollections(): Observable<Collection[]> {
      console.log('getcollections'); 
      return this.http.get<Collection[]>(this.API_URL+'collections');

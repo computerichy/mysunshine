@@ -24,7 +24,21 @@ list-style-type:none;
       background-color: #ffffff;
       margin-bottom: 4px;
       display: block;
+    } 
+
+    ion-item.item.item-block.item-ios {
+      padding-left:15px;
     }
+
+    .menu-inner ion-item.item-ios {
+      background-color:transparent !important;
+      
+
+      .item-inner {
+        border-bottom:none !important;
+      }
+    }
+
     .navigation_wrapper{
       position: fixed;
       top: 0px;

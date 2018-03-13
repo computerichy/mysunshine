@@ -26,6 +26,7 @@ console.log(sunshineApi.getHandset());
     sunshineApi.getHandset()
       .subscribe(data => {
         this.handset = data;
+        console.log(data);
       });
   }
 

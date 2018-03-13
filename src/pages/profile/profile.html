@@ -32,11 +32,14 @@
 			<div id="personal_details_overview">
 				<ul class="single_row">
 					<li style="width:90%; font-size:16px; line-height:16px;">Personal Details:</li>
-					<li style="width:10%; text-align:right;" id="personal_details_edit_icon"> <ion-icon ios="ios-create" md="md-create"></ion-icon></li>
-					<div class="clear"></div>
+					
+                                        <button (click)="enterEditMode()" style="background:none; border:none; width:100px; float:right; position:absolute; right:5px; top:0;">
+                                          <li  *ngIf="!editMode" style="float:right;" id="personal_details_edit_icon"> <ion-icon ios="ios-create" md="md-create"></ion-icon>Edit</li>
+					</button> 
+                                        <div class="clear"></div>
 				</ul>
-				<div class="grey_br"></div>
-				<div>
+				<div  *ngIf="!editMode" class="grey_br" style="padding-top:25px;"></div>
+				<div  *ngIf="!editMode">
 					<table id="my_profile_display">
 						<tr>
 							<td class="profile_placeholder">Title:</td>
@@ -76,53 +79,127 @@
 						</tr>
 					</table>
 				</div>
+
+
+				<div id="personal_details_edit" *ngIf="editMode">
+ 
+
+						<form [formGroup]="updateProfile" (ngSubmit)="putProfile()">
+									<ion-item>
+										<ion-label>Title</ion-label> 
+										<ion-select formControlName="title">
+												<ion-option>Mr</ion-option>
+												<ion-option>Mrs</ion-option>
+												<ion-option>Miss</ion-option>
+												<ion-option>Ms</ion-option>
+											  </ion-select>
+									  </ion-item> 
+									  <ion-item>
+										<ion-label stacked>First name</ion-label>
+										<ion-input formControlName="forename">{{profile.forename}}</ion-input>
+									  </ion-item>
+		
+									  <ion-item>
+											<ion-label stacked>Surname</ion-label>
+											<ion-input formControlName="surname">{{profile.surname}}</ion-input>
+										  </ion-item>
+		
+										  <ion-item>
+												<ion-label stacked>Address 1</ion-label>
+												<ion-input formControlName="address1"></ion-input>
+											  </ion-item>
+		
+											  <ion-item>
+													<ion-label stacked>Address 2</ion-label>
+													<ion-input formControlName="address2"></ion-input>
+												  </ion-item>
+		
+		
+												  <ion-item>
+														<ion-label stacked>Town/City</ion-label>
+														<ion-input formControlName="address3"></ion-input>
+													  </ion-item>
+		
+													  <ion-item>
+															<ion-label stacked>Postcode</ion-label>
+															<ion-input formControlName="postcode"></ion-input>
+														  </ion-item>
+		
+		
+													  <ion-item>
+															<ion-label stacked>Phone number</ion-label>
+															<ion-input formControlName="tel_home"></ion-input>
+														  </ion-item>
+		
+														  <ion-item>
+																<ion-label stacked>Email Address</ion-label>
+																<ion-input formControlName="email"></ion-input>
+															  </ion-item>
+		
+		
+									  <button block ion-button type="submit" [disabled]="!updateProfile.valid">Save Changes</button>
+		
+						</form>
+		
+		
+						<!-- <ul class="single_row">
+							<li style="width:100%; font-size:16px; line-height:16px;">Personal Details:</li>
+							<div class="clear"></div>
+						</ul> -->
+						<!-- <div class="grey_br"></div> -->
+						<!-- <div>
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Title</label>
+								<input class="profile_placeholder_input" type="text" name="" value="Mr" />
+							</div>
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">First name</label>
+								<input class="profile_placeholder_input" type="text" name=""  value="Karl" />
+							</div>	
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Surname</label>
+								<input class="profile_placeholder_input" type="text" name="" value="Scott" />
+							</div>	
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Address 1</label>
+								<input class="profile_placeholder_input" type="text" name="" value="39 Great Park Road" />
+							</div>	
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Address 2</label>
+								<input class="profile_placeholder_input" type="text" name=""  value="Kimberworth" />
+							</div>						
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Town/City</label>
+								<input class="profile_placeholder_input" type="text" name="" value="Kimberworth" />
+							</div>						
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Postcode</label>
+								<input class="profile_placeholder_input" type="text" name=""  value="S61 3QF" />
+							</div>						
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Phone number</label>
+								<input class="profile_placeholder_input" type="text" name="" value="07557685022" />
+							</div>
+							<div class="personal_details_edit_single">
+								<label class="profile_placeholder_edit">Email Address</label>
+								<input class="profile_placeholder_input" type="text" name="" value="karl@hotmail.com" />
+							</div>
+							<button class="update_btn">Update Settings</button>
+						</div> -->
+					</div>
+
+
+
+
+
+
+
+
+
+
+
 			</div>
-			<div id="personal_details_edit">
-				<ul class="single_row">
-					<li style="width:100%; font-size:16px; line-height:16px;">Personal Details:</li>
-					<div class="clear"></div>
-				</ul>
-				<div class="grey_br"></div>
-				<div>
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Title</label>
-						<input class="profile_placeholder_input" type="text" name="" value="Mr" />
-					</div>
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">First name</label>
-						<input class="profile_placeholder_input" type="text" name=""  value="Karl" />
-					</div>	
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Surname</label>
-						<input class="profile_placeholder_input" type="text" name="" value="Scott" />
-					</div>	
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Address 1</label>
-						<input class="profile_placeholder_input" type="text" name="" value="39 Great Park Road" />
-					</div>	
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Address 2</label>
-						<input class="profile_placeholder_input" type="text" name=""  value="Kimberworth" />
-					</div>						
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Town/ City</label>
-						<input class="profile_placeholder_input" type="text" name="" value="Kimberworth" />
-					</div>						
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Postcode</label>
-						<input class="profile_placeholder_input" type="text" name=""  value="S61 3QF" />
-					</div>						
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Phone number</label>
-						<input class="profile_placeholder_input" type="text" name="" value="07557685022" />
-					</div>
-					<div class="personal_details_edit_single">
-						<label class="profile_placeholder_edit">Email Address</label>
-						<input class="profile_placeholder_input" type="text" name="" value="karl@hotmail.com" />
-					</div>
-					<button class="update_btn">Update Settings</button>
-				</div>
-			</div>
+		
 			<div class="clear"></div>
 		</div>	
 	    <div id="footer_phone_container">

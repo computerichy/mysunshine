@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs'; 
+import { MenuController } from 'ionic-angular';
 /**
  * Generated class for the PaymentsPage page.
  *
@@ -31,7 +32,9 @@ export class PaymentsPage {
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public sunshineApi: SunshineApiProvider) {
+              public sunshineApi: SunshineApiProvider,
+              public menuCtrl: MenuController
+            ) {
     
 console.log("payments constructor");
     sunshineApi.getCollections()
@@ -73,6 +76,10 @@ console.log("payments constructor");
     console.log('ionViewDidLoad LatestPaymentsPage');
   }
 
+  public toggleMenu() {
+     console.log('test menu');
+     this.menuCtrl.open();
+  }
 }
 
 

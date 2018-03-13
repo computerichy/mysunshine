@@ -13,9 +13,7 @@ import { ContractsPage } from '../../pages/contracts/contracts';
 import { AccountVerificationPage } from '../../pages/account-verification/account-verification';
 import { FaqPage } from '../../pages/faq/faq';
 
-
 import { AuthService } from '../../services/auth/auth';
-
 
 
 /**
@@ -61,7 +59,8 @@ export class NavbarComponent {
   }
 
   public goToPayments() {
-    this.navCtrl.push('PaymentsPage');
+    this.navCtrl.setRoot('PaymentsPage');
+  
   }
 
   public goToContracts() {

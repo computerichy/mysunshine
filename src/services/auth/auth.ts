@@ -63,6 +63,18 @@ export class AuthService {
        });
     }
 
+    public reloadProfile() {
+      var promise = new Promise((resolve, reject) => {
+        this.sunshineApi.getProfile().subscribe((response) => {
+          this.profile = response;
+          resolve();
+         });
+      });
+
+      return promise;
+     
+    }
+
     public logout() {
       localStorage.removeItem('authToken');
       localStorage.removeItem('authExpiresAt');

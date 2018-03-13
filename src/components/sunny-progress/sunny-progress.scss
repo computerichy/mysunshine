@@ -20,6 +20,10 @@ sunny-progress {
         border-radius:4px 0px 0px 4px;
         color:transparent;
         @include sunshine-gradient-cold-warm-left-right;
+        -webkit-transition: width 1.5s ease-in-out;
+        transition: width 1.5s ease-in-out; 
     }
+
+
  
 }

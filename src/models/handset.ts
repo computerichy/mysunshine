@@ -1,8 +1,6 @@
 export class Handset {
-  constructor() {
-
-
-  }
-
-
+  product_name: string;
+  pid: number;
+  image_filename: string;
+  variant_filename: string;
 }
