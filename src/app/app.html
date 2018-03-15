@@ -1,2 +1,94 @@
-<div id="splash"></div>
+<!-- <div id="splash"></div> -->
+
+<ion-menu type="overlay" [content]="myNav" side="right">
+    <ion-content style="background-color:rgba(0,0,0,0.8);">
+       <ion-list style="background:none;">
+        <ion-item menuClose>
+          <ion-icon ios="ios-close" md="md-close" style="color:#ffffff; font-size:30px; text-align:right; font-weight:900;"></ion-icon>
+        </ion-item>
+  
+       <ul class="global_nav_container">
+          <li class="navigation_li_single" (click)="goToHome()">
+            <ion-icon ios="ios-home" md="md-home" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_home">Home
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToPayments()">
+            <ion-icon ios="ios-card" md="md-card" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_payment">Payments
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToUsage()">
+            <ion-icon ios="ios-globe" md="md-globe" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_usage">Usage
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToHandset()">
+            <ion-icon ios="ios-phone-portrait" md="md-phone-portrait" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_handset">Handset
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToProfile()">
+            <ion-icon ios="ios-person" md="md-person" class="toggle_nav_icon"></ion-icon>
+            <button menuClose  id="menu_profile">My Profile
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToDelivery()">
+            <ion-icon ios="ios-cube" md="md-cube" class="toggle_nav_icon"></ion-icon>
+            <button menuClose  id="menu_delivery">Delivery Details
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToOrder()">
+            <ion-icon ios="ios-document" md="md-document" class="toggle_nav_icon"></ion-icon>
+            <button menuClose  id="menu_order">Order Details
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToContracts()">
+            <ion-icon ios="ios-paper" md="md-paper" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_contracts">Contracts
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="goToAccountVerification()">
+            <ion-icon ios="ios-checkmark" md="md-checkmark" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_account_verification">Account Verification
+                <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+            </li>
+          <li class="navigation_li_single" (click)="goToFaq()">
+            <ion-icon ios="ios-help" md="md-help" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_faq">FAQ
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+          <li class="navigation_li_single" (click)="logout()">
+            <ion-icon ios="ios-exit" md="md-exit" class="toggle_nav_icon"></ion-icon>
+            <button menuClose id="menu_faq">Sign Out
+              <img src="assets/imgs/nav_arrow_icon.png" alt="" title="" />
+            </button>
+          </li>
+        </ul>
+   
+  
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- <ion-nav #mycontent [root]="rootPage"></ion-nav> --> 
+  
+  
+  
+
+
+
+
+
+
+
 <ion-nav #myNav [root]="rootPage"></ion-nav>

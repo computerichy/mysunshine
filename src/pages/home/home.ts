@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
- 
+  
 import { ProfilePage } from '../profile/profile';
 import { PaymentsPage } from '../payments/payments';
 import { HandsetPage } from '../handset/handset';
 import { OrderPage } from '../order/order';
-import { UsagePage } from '../usage/usage';
+import { UsagePage } from '../usage/usage'; 
 import { DeliveryPage } from '../delivery/delivery';
 import { LoginPage } from '../login/login';
 import { ContractsPage } from '../contracts/contracts';
@@ -49,7 +49,7 @@ export class HomePage {
     this.navCtrl.push('ProfilePage');
   }
 
-  public goToDelivery() {
+  public goToDelivery() { 
     this.navCtrl.push('DeliveryPage');
   }
 
@@ -70,14 +70,14 @@ export class HomePage {
   }
 
   public goToPayments() {
-    this.navCtrl.push('PaymentsPage');
+    this.navCtrl.push('PaymentsPage'); 
   }
-
+ 
   public goToContracts() {
     this.navCtrl.push('ContractsPage');
   }
 
-  public goToAccountVerification() {
+  public goToAccountVerification() { 
     this.navCtrl.push('AccountVerificationPage');
   }
 
@@ -85,7 +85,7 @@ export class HomePage {
     this.navCtrl.push('FaqPage');
   }
 
-  public getGreetingTime (m) {
+  public getGreetingTime (m) { 
 	var g = null; 
 	
 	if(!m || !m.isValid()) { return; } 
@@ -104,5 +104,13 @@ export class HomePage {
 	
 	return g;
      }
+
+
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+
+    
+  }
 
 }

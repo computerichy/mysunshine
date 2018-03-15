@@ -35,6 +35,7 @@ export class PaymentsPage {
               public sunshineApi: SunshineApiProvider,
               public menuCtrl: MenuController
             ) {
+
     
 console.log("payments constructor");
     sunshineApi.getCollections()
@@ -78,7 +79,7 @@ console.log("payments constructor");
 
   public toggleMenu() {
      console.log('test menu');
-     this.menuCtrl.open();
+    //  this.menuCtrl.open();
   }
 }
 

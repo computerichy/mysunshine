@@ -26,10 +26,7 @@ export class ProfilePage {
                public loadingCtrl: LoadingController,
                public authService: AuthService) {
 
-
-
-
-    
+     
                 this.updateProfile = this.formBuilder.group({
                   title: ['', Validators.required],
                   forename: ['', Validators.required],

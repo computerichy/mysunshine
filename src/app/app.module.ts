@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth/auth';
  
 import { SunshineApiProvider } from '../providers/sunshine-api/sunshine-api';
 
-
+ 
 
 
  
@@ -57,12 +57,17 @@ import { FaqPage } from '../pages/faq/faq';
 //import { NavbarComponent } from '../components/navbar/navbar';
 
 
+
+
+
+
 import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp//,
+    // PaymentsPage
     //HomePage
    //LoginPage,
   //  LoginComponent,
@@ -79,7 +84,9 @@ import { ComponentsModule } from '../components/components.module';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp//,
+
+    // PaymentsPage
 
     //HomePage,
    // LoginPage,

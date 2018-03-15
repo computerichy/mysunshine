@@ -9,14 +9,17 @@ import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth/auth';
 import { Nav, NavController } from 'ionic-angular';
 import { Device } from '@ionic-native/device'; 
-  
+import { AlertController } from 'ionic-angular';
 
-@Component({
+// import {ProfilePage} from '../pages/profile/profile';
+
+
+@Component({ 
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild('myNav') navCtrl: NavController
-  @ViewChild(Nav) nav: Nav;
+  // @ViewChild(Nav) nav: Nav;
    
 //  rootPage:any = HomePage;
     rootPage:any;
@@ -27,7 +30,9 @@ export class MyApp {
               public events: Events,
               public auth: AuthService,
               public headerColor: HeaderColor,
-              private device: Device
+              private device: Device,
+              public alertCtrl: AlertController, 
+              public authService: AuthService
   
     ) {
 
@@ -45,7 +50,7 @@ export class MyApp {
          splashScreen.hide();
          this.subscribeEvents();
        });
-
+ 
   }
 
 
@@ -61,7 +66,76 @@ export class MyApp {
       
     });
 
-  }  
+   }   
+
+     
+  public goToProfile() {
+    this.navCtrl.push('ProfilePage');
+  }
+ 
+  public goToDelivery() {
+    this.navCtrl.push('DeliveryPage');
+  }
+
+  public goToUsage() {
+    this.navCtrl.push('UsagePage');
+  }
+
+  public goToLogin() {
+    this.navCtrl.push('LoginPage');
+  }
+
+  public goToOrder() {
+    this.navCtrl.push('OrderPage');
+  }
+
+  public goToHandset() {
+    this.navCtrl.push('HandsetPage');
+  }
+
+  public goToPayments() {
+    this.navCtrl.push('PaymentsPage');
+  }
+ 
+  public goToHome() {
+    this.navCtrl.push('HomePage');
+  }
+
+  public goToContracts() {
+    this.navCtrl.push('ContractsPage');
+  }
+
+  public goToAccountVerification() {
+    this.navCtrl.push('AccountVerificationPage');
+  }
+
+  public goToFaq() {
+    this.navCtrl.push('FaqPage');
+  }
+
+  public logout() {
+    let alert = this.alertCtrl.create({
+    title: 'Sign out',
+    message: 'Are you sure you\'d like to sign out?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+     
+        }
+      },
+      {
+        text: 'Yes, sign me out',
+        handler: () => {
+          this.authService.logout();
+          this.navCtrl.push('LoginPage');
+        }
+      }
+    ]
+   });
+   alert.present();
+  }
 
 
 
